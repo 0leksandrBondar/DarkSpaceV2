@@ -4,7 +4,7 @@ import QtQuick.Controls.Material 2.13
 
 ApplicationWindow
 {
-    id: root
+    id: appWindow
     visible: true
     width: 800
     height: 900
