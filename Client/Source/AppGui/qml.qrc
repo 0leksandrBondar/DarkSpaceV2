@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>WelcomePage.qml</file>
+        <file>SharedComponents/Buttons/CustomButton.qml</file>
     </qresource>
 </RCC>
