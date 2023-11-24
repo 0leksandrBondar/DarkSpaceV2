@@ -62,7 +62,7 @@ Rectangle
     CustomButton
     {
         id: signUpButton
-        buttonText: qsTr("SignIn")
+        buttonText: qsTr("LogIn")
         anchors.bottom: parent.bottom
         anchors.left: parent.horizontalCenter
         anchors.leftMargin: parent.width / 10
