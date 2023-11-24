@@ -2,6 +2,8 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Controls.Material 2.15
 
+import "./SignInPages"
+
 ApplicationWindow
 {
     id: appWindow
@@ -12,8 +14,13 @@ ApplicationWindow
 
     Material.theme: Material.Dark
 
-    WelcomePage
+    SignInPage
     {
 
     }
+
+//    WelcomePage
+//    {
+//
+//    }
 }

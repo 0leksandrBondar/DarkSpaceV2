@@ -1,7 +1,10 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Controls.Basic
+import QtQuick.Controls.Material 2.15
 
-import "./SharedComponents/Buttons"
+import "../SharedComponents/Buttons"
+import "../SharedComponents/TextFields"
 
 Rectangle
 {
@@ -18,19 +21,38 @@ Rectangle
     Text
     {
         id: welcomeLabel
-        text: qsTr("Welcome to DarkSpace")
-        anchors.bottom: parent.verticalCenter
+        text: qsTr("LogIn")
+        anchors.top: parent.top
+        anchors.topMargin : 30
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottomMargin: parent.height / 4
         color: "#00ff95"
         font.pointSize: 54
         font.bold: true
     }
 
+    CustomTextField
+    {
+        id: userNameField
+        textPlacehodel: qsTr("User name")
+        anchors.bottom: parent.verticalCenter
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.bottomMargin: parent.height / 5
+    }
+
+    CustomTextField
+    {
+        id: passwordField
+        textPlacehodel: qsTr("Password")
+        echoMode: TextInput.Password
+        anchors.top: userNameField.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.topMargin: 30
+    }
+
     CustomButton
     {
         id: signInButton
-        buttonText: qsTr("SignIn")
+        buttonText: qsTr("Back")
         anchors.bottom: parent.bottom
         anchors.right: parent.horizontalCenter
         anchors.rightMargin: parent.width / 10
@@ -40,7 +62,7 @@ Rectangle
     CustomButton
     {
         id: signUpButton
-        buttonText: qsTr("SignUp")
+        buttonText: qsTr("SignIn")
         anchors.bottom: parent.bottom
         anchors.left: parent.horizontalCenter
         anchors.leftMargin: parent.width / 10
