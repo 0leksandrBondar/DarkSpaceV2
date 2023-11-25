@@ -12,7 +12,7 @@ Rectangle
     height: appWindow.height
 
     signal backClicked()
-    signal loginClicked()
+    signal logInClicked()
 
     Image
     {
@@ -77,7 +77,7 @@ Rectangle
         anchors.bottomMargin: parent.height / 4
         onClicked:
         {
-            loginClicked()
+            logInClicked()
         }
     }
 }

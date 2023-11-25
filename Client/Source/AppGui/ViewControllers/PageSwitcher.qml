@@ -18,14 +18,30 @@ StackView
         {
             onLogInClicked:
             {
-                pageSwitcher.push(signInPage)
+                pageSwitcher.push(logInPage)
+            }
+            onSingUpClicked:
+            {
+                pageSwitcher.push(signUpPage)
+            }
+        }
+    }
+
+    Component
+    {
+        id: logInPage
+        SignInPage
+        {
+            onBackClicked:
+            {
+                pageSwitcher.pop()
             }
         }
     }
     Component
     {
-        id: signInPage
-        SignInPage
+        id: signUpPage
+        SignUpPage
         {
             onBackClicked:
             {
