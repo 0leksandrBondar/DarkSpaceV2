@@ -2,8 +2,12 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>WelcomePage.qml</file>
+
         <file>SignInPages/SignInPage.qml</file>
         <file>SignInPages/SignUpPage.qml</file>
+
+        <file>ViewControllers/PageSwitcher.qml</file>
+
         <file>SharedComponents/Buttons/CustomButton.qml</file>
         <file>SharedComponents/TextFields/CustomTextField.qml</file>
     </qresource>

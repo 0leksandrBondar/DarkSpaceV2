@@ -5,7 +5,8 @@ import "./SharedComponents/Buttons"
 
 Rectangle
 {
-    anchors.fill: parent
+    signal logInClicked()
+    signal singUpClicked()
 
     Image
     {
@@ -35,6 +36,10 @@ Rectangle
         anchors.right: parent.horizontalCenter
         anchors.rightMargin: parent.width / 10
         anchors.bottomMargin: parent.height / 4
+        onClicked:
+        {
+            logInClicked()
+        }
     }
 
     CustomButton
@@ -45,5 +50,9 @@ Rectangle
         anchors.left: parent.horizontalCenter
         anchors.leftMargin: parent.width / 10
         anchors.bottomMargin: parent.height / 4
+        onClicked:
+        {
+            singUpClicked()
+        }
     }
 }

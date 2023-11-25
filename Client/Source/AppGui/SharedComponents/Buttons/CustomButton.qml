@@ -8,8 +8,8 @@ Button
 
     property string buttonText
 
-    width: 170
-    height: 80
+    width: 150
+    height: 70
     text: buttonText
     contentItem : Text
     {
@@ -17,7 +17,7 @@ Button
         color: button.hovered ?  "#1b1c1f" : "#00ff95"
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        font.pointSize: 14
+        font.pointSize: 17
     }
     background: Rectangle
     {

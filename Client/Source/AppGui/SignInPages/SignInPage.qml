@@ -8,7 +8,11 @@ import "../SharedComponents/TextFields"
 
 Rectangle
 {
-    anchors.fill: parent
+    width: appWindow.width
+    height: appWindow.height
+
+    signal backClicked()
+    signal loginClicked()
 
     Image
     {
@@ -57,6 +61,10 @@ Rectangle
         anchors.right: parent.horizontalCenter
         anchors.rightMargin: parent.width / 10
         anchors.bottomMargin: parent.height / 4
+        onClicked:
+        {
+            backClicked()
+        }
     }
 
     CustomButton
@@ -67,5 +75,9 @@ Rectangle
         anchors.left: parent.horizontalCenter
         anchors.leftMargin: parent.width / 10
         anchors.bottomMargin: parent.height / 4
+        onClicked:
+        {
+            loginClicked()
+        }
     }
 }
