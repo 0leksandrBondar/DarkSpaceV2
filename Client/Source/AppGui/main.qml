@@ -14,13 +14,13 @@ ApplicationWindow
 
     Material.theme: Material.Dark
 
-//    SignInPage
-//    {
-//
-//    }
-
-    WelcomePage
+    SignUpPage
     {
 
     }
+
+//    WelcomePage
+//    {
+//
+//    }
 }

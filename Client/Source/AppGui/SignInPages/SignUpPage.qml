@@ -20,8 +20,8 @@ Rectangle
 
     Text
     {
-        id: logInLabel
-        text: qsTr("LogIn")
+        id: signUnLabel
+        text: qsTr("SignUp")
         anchors.top: parent.top
         anchors.topMargin : 30
         anchors.horizontalCenter: parent.horizontalCenter
@@ -41,10 +41,19 @@ Rectangle
 
     CustomTextField
     {
+        id: emailField
+        textPlacehodel: qsTr("Email")
+        anchors.top: userNameField.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.topMargin: 30
+    }
+
+    CustomTextField
+    {
         id: passwordField
         textPlacehodel: qsTr("Password")
         echoMode: TextInput.Password
-        anchors.top: userNameField.bottom
+        anchors.top: emailField.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.topMargin: 30
     }
