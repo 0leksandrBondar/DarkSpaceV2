@@ -1,15 +1,15 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Controls.Basic
 
 import "../"
+import "../ClientPage"
 import "../SignInPages"
 
 StackView
 {
     id: pageSwitcher
 
-    initialItem: welcomePage
+    initialItem: clientPage
     anchors.fill : parent
     Component
     {
@@ -47,6 +47,13 @@ StackView
             {
                 pageSwitcher.pop()
             }
+        }
+    }
+    Component
+    {
+        id: clientPage
+        ClientPage
+        {
         }
     }
 }

@@ -1,7 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Controls.Basic
-import QtQuick.Controls.Material 2.15
 
 import Theme 1.0
 import "../SharedComponents/Buttons"

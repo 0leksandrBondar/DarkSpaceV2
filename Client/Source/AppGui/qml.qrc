@@ -6,6 +6,11 @@
         <file>SignInPages/SignInPage.qml</file>
         <file>SignInPages/SignUpPage.qml</file>
 
+        <file>ClientPage/ClientPage.qml</file>
+
+        <file>ClientPage/ChatListView/ChatBlock.qml</file>
+        <file>ClientPage/ChatListView/ChatListView.qml</file>
+
         <file>ViewControllers/PageSwitcher.qml</file>
 
         <file>SharedComponents/Buttons/CustomButton.qml</file>
