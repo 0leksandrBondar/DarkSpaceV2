@@ -66,6 +66,20 @@ Rectangle
             ScrollBar.vertical: ScrollBar
             {
                 visible: listView.contentHeight > listView.height
+                background: Rectangle
+                {
+                    width: 10
+                    color: "transparent"
+                    radius: 20
+                    anchors.right: parent.right
+                }
+                contentItem: Rectangle
+                {
+                    implicitWidth: 10
+                    radius: 20
+                    color: "#505250"
+                    anchors.right: parent.right
+                }
             }
         }
     }

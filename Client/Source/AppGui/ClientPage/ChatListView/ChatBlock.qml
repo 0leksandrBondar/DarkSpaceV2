@@ -11,9 +11,6 @@ Rectangle
     height: 60
     color: Material.background
 
-    border.width: 1
-    border.color:"#00ff95"
-
     Text
     {
         id: chatTitle
@@ -29,10 +26,12 @@ Rectangle
         onEntered:
         {
             chatBlock.color = "#434543"
+            chatBlock.border.color = "#00ff95"
         }
         onExited:
         {
             chatBlock.color = Material.background
+            chatBlock.border.color = Material.background
         }
     }
 }
