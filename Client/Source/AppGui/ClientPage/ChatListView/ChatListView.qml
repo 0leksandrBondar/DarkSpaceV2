@@ -47,15 +47,25 @@ Rectangle
             ListElement { text: "Message 12" }
             ListElement { text: "Message 13" }
             ListElement { text: "Message 14" }
+            ListElement { text: "Message 15" }
+            ListElement { text: "Message 16" }
+            ListElement { text: "Message 17" }
         }
 
         ListView
         {
+            id: listView
+            clip: true
             anchors.fill: parent
             model: chatBlockList
+            boundsBehavior: Flickable.StopAtBounds
             delegate: ChatBlock
             {
                 title: model.text
+            }
+            ScrollBar.vertical: ScrollBar
+            {
+                visible: listView.contentHeight > listView.height
             }
         }
     }
