@@ -28,6 +28,11 @@ int main(int argc, char* argv[])
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
+
+    qmlRegisterSingletonType(QStringLiteral(
+                                 "qrc:/SharedComponents/SharedProperties/SharedProperties.qml"),
+                             "Theme", 1, 0, "Theme");
+
     engine.load(url);
     return app.exec();
 }

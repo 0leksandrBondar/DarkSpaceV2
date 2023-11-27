@@ -10,5 +10,6 @@
 
         <file>SharedComponents/Buttons/CustomButton.qml</file>
         <file>SharedComponents/TextFields/CustomTextField.qml</file>
+        <file>SharedComponents/SharedProperties/SharedProperties.qml</file>
     </qresource>
 </RCC>
