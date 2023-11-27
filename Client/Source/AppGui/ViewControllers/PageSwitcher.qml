@@ -9,7 +9,7 @@ StackView
 {
     id: pageSwitcher
 
-    initialItem: clientPage
+    initialItem: welcomePage
     anchors.fill : parent
     Component
     {
@@ -36,6 +36,10 @@ StackView
             {
                 pageSwitcher.pop()
             }
+            onLogInClicked:
+            {
+                pageSwitcher.push(clientPage)
+            }
         }
     }
     Component
@@ -46,6 +50,10 @@ StackView
             onBackClicked:
             {
                 pageSwitcher.pop()
+            }
+            onSignUpClicked:
+            {
+                pageSwitcher.push(clientPage)
             }
         }
     }

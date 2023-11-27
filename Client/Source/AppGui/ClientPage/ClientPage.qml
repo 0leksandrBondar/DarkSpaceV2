@@ -9,7 +9,8 @@ Rectangle
     id: clientPage
 
     color: Material.background
-    anchors.fill: parent
+    width: appWindow.width
+    height: appWindow.height
 
     ChatListView
     {
