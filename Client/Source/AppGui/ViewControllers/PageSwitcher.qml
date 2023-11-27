@@ -1,8 +1,8 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Controls.Basic
 
 import "../"
+import "../ClientPage"
 import "../SignInPages"
 
 StackView
@@ -36,6 +36,10 @@ StackView
             {
                 pageSwitcher.pop()
             }
+            onLogInClicked:
+            {
+                pageSwitcher.push(clientPage)
+            }
         }
     }
     Component
@@ -47,6 +51,17 @@ StackView
             {
                 pageSwitcher.pop()
             }
+            onSignUpClicked:
+            {
+                pageSwitcher.push(clientPage)
+            }
+        }
+    }
+    Component
+    {
+        id: clientPage
+        ClientPage
+        {
         }
     }
 }

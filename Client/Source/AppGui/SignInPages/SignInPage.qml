@@ -1,7 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Controls.Basic
-import QtQuick.Controls.Material 2.15
 
 import Theme 1.0
 import "../SharedComponents/Buttons"
@@ -38,7 +37,7 @@ Rectangle
     CustomTextField
     {
         id: userNameField
-        textPlacehodel: qsTr("User name")
+        textPlaceholder: qsTr("User name")
         anchors.bottom: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottomMargin: parent.height / 5
@@ -47,7 +46,7 @@ Rectangle
     CustomTextField
     {
         id: passwordField
-        textPlacehodel: qsTr("Password")
+        textPlaceholder: qsTr("Password")
         echoMode: TextInput.Password
         anchors.top: userNameField.bottom
         anchors.horizontalCenter: parent.horizontalCenter

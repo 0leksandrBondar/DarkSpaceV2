@@ -37,7 +37,7 @@ Rectangle
     CustomTextField
     {
         id: userNameField
-        textPlacehodel: qsTr("User name")
+        textPlaceholder: qsTr("User name")
         anchors.bottom: parent.verticalCenter
         anchors.bottomMargin: parent.height / 5
         anchors.horizontalCenter: parent.horizontalCenter
@@ -46,17 +46,17 @@ Rectangle
     CustomTextField
     {
         id: emailField
-        textPlacehodel: qsTr("Email")
-        anchors.topMargin: 30
+        textPlaceholder: qsTr("Email")
         anchors.top: userNameField.bottom
         anchors.horizontalCenter: parent.horizontalCenter
+        anchors.topMargin: 30
     }
 
     CustomTextField
     {
         id: passwordField
         echoMode: TextInput.Password
-        textPlacehodel: qsTr("Password")
+        textPlaceholder: qsTr("Password")
         anchors.topMargin: 30
         anchors.top: emailField.bottom
         anchors.horizontalCenter: parent.horizontalCenter

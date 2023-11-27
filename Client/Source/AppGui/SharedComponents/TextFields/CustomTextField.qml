@@ -9,14 +9,14 @@ TextField
 {
     id: emailField
 
-    property string textPlacehodel
+    property string textPlaceholder
 
     width: 500
     height: 50
     font.pointSize: 20
     background: Rectangle
     {
-        color: Theme.backgroundColor
+        color:  Material.background
         radius: 20
         border.color: Theme.labelColor
         border.width: 1
@@ -26,11 +26,11 @@ TextField
         opacity: 0.8
         id: placeholderText
         color: Theme.labelColor
-        font.pointSize: 20
-        text: textPlacehodel
+        font.pointSize: parent.font.pointSize
+        text: textPlaceholder
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
-        anchors.leftMargin: 10
+        anchors.leftMargin: 15
     }
     onActiveFocusChanged:
     {
