@@ -9,7 +9,7 @@ TextField
 {
     id: emailField
 
-    property string textPlacehodel
+    property string textPlaceholder
 
     width: 500
     height: 50
@@ -27,7 +27,7 @@ TextField
         id: placeholderText
         color: Theme.labelColor
         font.pointSize: 20
-        text: textPlacehodel
+        text: textPlaceholder
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         anchors.leftMargin: 10
