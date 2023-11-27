@@ -4,6 +4,7 @@ import QtQuick.Controls.Material 2.15
 
 Rectangle
 {
+    id: chatListViewBlock
     width: parent.width / 3
     height: parent.height
     anchors.left: parent.left
@@ -24,9 +25,6 @@ Rectangle
         height: parent.height - controlBar.height
         width: parent.width
         color: Material.background
-
-        border.width: 1
-        border.color:"#00ff95"
         anchors.top: controlBar.bottom
 
         ListModel
@@ -58,7 +56,9 @@ Rectangle
             clip: true
             anchors.fill: parent
             model: chatBlockList
+            orientation: Qt.Vertical
             boundsBehavior: Flickable.StopAtBounds
+            verticalLayoutDirection: ListView.BottomToTop
             delegate: ChatBlock
             {
                 title: model.text
@@ -69,16 +69,46 @@ Rectangle
                 background: Rectangle
                 {
                     width: 10
-                    color: "transparent"
                     radius: 20
+                    color: "transparent"
                     anchors.right: parent.right
                 }
                 contentItem: Rectangle
                 {
-                    implicitWidth: 10
                     radius: 20
                     color: "#505250"
+                    implicitWidth: 10
                     anchors.right: parent.right
+                }
+            }
+        }
+    }
+    Rectangle
+    {
+        id: resizeWidget
+        width: 5
+        height: parent.height
+        color: "transparent"
+        anchors.left: chatListViewBlock.right
+
+        MouseArea
+        {
+            anchors.fill: parent
+            hoverEnabled: true
+            drag.target: parent
+            drag.axis: Drag.XAxis
+            cursorShape: drag.active ? Qt.SizeHorCursor : Qt.ArrowCursor
+            onEntered:
+            {
+                cursorShape = Qt.SizeHorCursor;
+            }
+            onMouseXChanged:
+            {
+                if(drag.active)
+                {
+                    chatListViewBlock.width = chatListViewBlock.width + mouseX
+                    if(chatListViewBlock.width < 50)
+                        chatListViewBlock.width = 50
                 }
             }
         }
