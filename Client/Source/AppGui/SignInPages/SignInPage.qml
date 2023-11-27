@@ -3,6 +3,7 @@ import QtQuick.Controls 2.15
 import QtQuick.Controls.Basic
 import QtQuick.Controls.Material 2.15
 
+import Theme 1.0
 import "../SharedComponents/Buttons"
 import "../SharedComponents/TextFields"
 
@@ -17,9 +18,9 @@ Rectangle
     Image
     {
         id: loginPageBackground
-        source: "file:Resource/Backgrounds/background.jpg"
         anchors.fill: parent
         fillMode: Image.PreserveAspectCrop
+        source: Theme.pathToBackgroundImage
     }
 
     Text
@@ -29,7 +30,7 @@ Rectangle
         anchors.top: parent.top
         anchors.topMargin : 30
         anchors.horizontalCenter: parent.horizontalCenter
-        color: "#00ff95"
+        color: Theme.labelColor
         font.pointSize: 54
         font.bold: true
     }

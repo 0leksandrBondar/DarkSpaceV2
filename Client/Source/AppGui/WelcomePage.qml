@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
+import Theme 1.0
 import "./SharedComponents/Buttons"
 
 Rectangle
@@ -11,21 +12,21 @@ Rectangle
     Image
     {
         id: loginPageBackground
-        source: "file:Resource/Backgrounds/background.jpg"
         anchors.fill: parent
         fillMode: Image.PreserveAspectCrop
+        source: Theme.pathToBackgroundImage
     }
 
     Text
     {
         id: welcomeLabel
         text: qsTr("Welcome to DarkSpace")
-        anchors.bottom: parent.verticalCenter
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottomMargin: parent.height / 4
-        color: "#00ff95"
-        font.pointSize: 54
         font.bold: true
+        font.pointSize: 54
+        color: Theme.labelColor
+        anchors.bottom: parent.verticalCenter
+        anchors.bottomMargin: parent.height / 4
+        anchors.horizontalCenter: parent.horizontalCenter
     }
 
     CustomButton

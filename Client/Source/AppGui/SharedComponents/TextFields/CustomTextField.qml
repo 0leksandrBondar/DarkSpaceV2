@@ -3,6 +3,8 @@ import QtQuick.Controls 2.15
 import QtQuick.Controls.Basic
 import QtQuick.Controls.Material 2.15
 
+import Theme 1.0
+
 TextField
 {
     id: emailField
@@ -14,16 +16,16 @@ TextField
     font.pointSize: 20
     background: Rectangle
     {
-        color: Material.Dark
+        color: Theme.backgroundColor
         radius: 20
-        border.color: "#00ff95"
+        border.color: Theme.labelColor
         border.width: 1
     }
     PlaceholderText
     {
         opacity: 0.8
         id: placeholderText
-        color: "#00ff95"
+        color: Theme.labelColor
         font.pointSize: 20
         text: textPlacehodel
         anchors.verticalCenter: parent.verticalCenter
