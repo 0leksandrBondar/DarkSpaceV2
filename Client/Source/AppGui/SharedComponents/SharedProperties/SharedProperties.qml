@@ -7,6 +7,6 @@ import QtQuick.Controls.Material 2.15
 QtObject
 {
     readonly property color labelColor: "#00ff95"
-    readonly property color backgroundColor: Material.Dark
+    readonly property color backgroundColor: Material.background
     readonly property string pathToBackgroundImage: "file:Resource/Backgrounds/background.jpg"
 }

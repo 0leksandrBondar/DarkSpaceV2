@@ -9,23 +9,21 @@ Rectangle
     height: parent.height
     anchors.left: parent.left
 
-    Rectangle
+    ChatSearchLine
     {
-        id: controlBar
+        id: chatSearchLine
         width: parent.width
         height: 60
-        anchors.top: parent.top
-        color: "red"
     }
 
     Rectangle
     {
         id: chatListView
 
-        height: parent.height - controlBar.height
+        height: parent.height - chatSearchLine.height
         width: parent.width
         color: Material.background
-        anchors.top: controlBar.bottom
+        anchors.top: chatSearchLine.bottom
 
         ListModel
         {
