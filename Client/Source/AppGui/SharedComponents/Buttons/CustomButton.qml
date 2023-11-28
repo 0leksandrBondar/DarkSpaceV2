@@ -6,7 +6,12 @@ Button
 {
     id: button
 
-    property string buttonText
+    property string buttonText  : qsTr("default")
+    property color unhoveredBackgroundColor  : "#1b1c1f"
+    property color hoveredBackgroundColor  : "#00ff95"
+    property color hoveredTextColor  : "#1b1c1f"
+    property color unhoveredTextColor  : "#00ff95"
+    property int buttonRadius : 30
 
     width: 150
     height: 70
@@ -14,15 +19,15 @@ Button
     contentItem : Text
     {
         text: button.text
-        color: button.hovered ?  "#1b1c1f" : "#00ff95"
+        color: button.hovered ?  hoveredTextColor : unhoveredTextColor
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         font.pointSize: 17
     }
     background: Rectangle
     {
-        radius: 30
+        radius: buttonRadius
         opacity: button.hovered ? 0.7 : 0.9
-        color: button.hovered ? "#00ff95" : "#1b1c1f"
+        color: button.hovered ? hoveredBackgroundColor : unhoveredBackgroundColor
     }
 }
