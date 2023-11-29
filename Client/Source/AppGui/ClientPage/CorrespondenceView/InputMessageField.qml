@@ -13,8 +13,8 @@ Rectangle
 
     CustomTextEditor
     {
-        id:textEdit
-        //height: 50
+        id:textEditor
+        anchors.right: fileButton.left
     }
 
     CustomButton
@@ -42,7 +42,7 @@ Rectangle
         hoveredBackgroundColor: "#29272e"
         unhoveredTextColor: "#05b56c"
         hoveredTextColor: "#00ff95"
-        anchors.left: parent.left
+        anchors.right: sendButton.left
         anchors.bottom: parent.bottom
     }
 }
