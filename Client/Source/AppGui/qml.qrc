@@ -11,10 +11,14 @@
         <file>ClientPage/ChatListView/ChatListView.qml</file>
         <file>ClientPage/ChatListView/ChatSearchLine.qml</file>
 
+        <file>ClientPage/CorrespondenceView/InputMessageField.qml</file>
+        <file>ClientPage/CorrespondenceView/CorrespondenceView.qml</file>
+
         <file>ViewControllers/PageSwitcher.qml</file>
 
         <file>SharedComponents/Buttons/CustomButton.qml</file>
         <file>SharedComponents/TextFields/CustomTextField.qml</file>
+        <file>SharedComponents/TextEditors/CustomTextEditor.qml</file>
         <file>SharedComponents/SharedProperties/SharedProperties.qml</file>
     </qresource>
 </RCC>

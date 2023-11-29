@@ -106,7 +106,7 @@ Rectangle
                 {
                     var maxWidth = appWindow.width - (appWindow.width/ 2)
                     chatListViewBlock.width = chatListViewBlock.width + mouseX
-                    
+
                     if(chatListViewBlock.width > maxWidth)
                         chatListViewBlock.width = maxWidth
                     if(chatListViewBlock.width < 50)
