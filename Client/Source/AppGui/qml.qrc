@@ -12,6 +12,7 @@
         <file>ClientPage/ChatListView/ChatSearchLine.qml</file>
 
         <file>ClientPage/CorrespondenceView/InputMessageField.qml</file>
+        <file>ClientPage/CorrespondenceView/ChatPersonalBar.qml</file>
         <file>ClientPage/CorrespondenceView/CorrespondenceView.qml</file>
 
         <file>ViewControllers/PageSwitcher.qml</file>

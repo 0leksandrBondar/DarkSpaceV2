@@ -6,6 +6,11 @@ Rectangle
 {
     color:  Material.background
 
+    ChatPersonalBar
+    {
+
+    }
+
     InputMessageField
     {
         id: inputField
