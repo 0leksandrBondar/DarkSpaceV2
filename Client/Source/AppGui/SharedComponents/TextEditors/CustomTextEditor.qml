@@ -26,6 +26,10 @@ Flickable
     {
         id: textEdit
         width: flick.width
+        //TODO: Fix it later (height property)
+        // DESCRIPTION: Before starting text input, this code centers the TextEdit relative to the parent element,
+        // but shows a warning: qrc:/SharedComponents/TextEditors/CustomTextEditor.qml:30:9: QML TextEdit: Loop binding
+         //detected for property "height". when increasing the parent block
         height: contentHeight < inputMessageField.height ? inputMessageField.height : contentHeight
         focus: true
         color: "white"
