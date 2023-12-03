@@ -8,8 +8,17 @@ Rectangle
 
     ChatPersonalBar
     {
-
+        id: personalBar
     }
+
+    CorrespondenceScene
+    {
+        id: correspondensScene
+        height: parent.height - personalBar.height
+        anchors.top: personalBar.bottom
+        anchors.bottom: inputField.top
+    }
+
 
     InputMessageField
     {
