@@ -2,6 +2,10 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Controls.Material 2.15
 
+import Theme 1.0
+
+import "../../SharedComponents/ScrollBars"
+
 Rectangle
 {
     id: chatListViewBlock
@@ -61,23 +65,9 @@ Rectangle
             {
                 title: model.text
             }
-            ScrollBar.vertical: ScrollBar
+            ScrollBar.vertical: CustomScrollBar
             {
-                visible: listView.contentHeight > listView.height
-                background: Rectangle
-                {
-                    width: 10
-                    radius: 20
-                    color: "transparent"
-                    anchors.right: parent.right
-                }
-                contentItem: Rectangle
-                {
-                    radius: 20
-                    color: "#505250"
-                    implicitWidth: 10
-                    anchors.right: parent.right
-                }
+
             }
         }
     }

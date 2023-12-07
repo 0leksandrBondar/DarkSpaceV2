@@ -2,15 +2,17 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Controls.Basic
 
+import Theme 1.0
+
 Button
 {
     id: button
 
     property string buttonText  : qsTr("default")
-    property color unhoveredBackgroundColor  : "#1b1c1f"
-    property color hoveredBackgroundColor  : "#00ff95"
-    property color hoveredTextColor  : "#1b1c1f"
-    property color unhoveredTextColor  : "#00ff95"
+    property color unhoveredBackgroundColor  : Theme.buttonUnhoveredBackgrounColor
+    property color hoveredBackgroundColor  : Theme.buttonHoveredBackgroundColor
+    property color hoveredTextColor  : Theme.buttonHoveredTextColor
+    property color unhoveredTextColor  : Theme.buttonUnhoveredTextColor
     property int buttonRadius : 30
 
     width: 150

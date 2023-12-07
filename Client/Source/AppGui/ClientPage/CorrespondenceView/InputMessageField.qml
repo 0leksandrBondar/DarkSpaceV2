@@ -2,13 +2,15 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Controls.Material 2.15
 
+import Theme 1.0
+
 import "../../SharedComponents/Buttons"
 import "../../SharedComponents/TextEditors"
 
 Rectangle
 {
     id: inputMessageField
-    color:  "#29272e"
+    color:  Theme.inputMessageFieldColor
     radius: 10
 
     CustomTextEditor
@@ -24,10 +26,10 @@ Rectangle
         height: 50
         buttonRadius: 10
         buttonText: qsTr("send")
-        unhoveredBackgroundColor: "#29272e"
-        hoveredBackgroundColor: "#29272e"
-        unhoveredTextColor: "#05b56c"
-        hoveredTextColor: "#00ff95"
+        unhoveredBackgroundColor: Theme.sendButtonUnhoveredBackgroundColor
+        hoveredBackgroundColor: Theme.sendButtonHoveredBackgroundColor
+        unhoveredTextColor: Theme.sendButtonUnhoveredTextColor
+        hoveredTextColor: Theme.sendButtonHoveredTextColor
         anchors.right: parent.right
         anchors.bottom: parent.bottom
     }
@@ -38,10 +40,10 @@ Rectangle
         height: 50
         buttonRadius: 10
         buttonText: qsTr("file")
-        unhoveredBackgroundColor: "#29272e"
-        hoveredBackgroundColor: "#29272e"
-        unhoveredTextColor: "#05b56c"
-        hoveredTextColor: "#00ff95"
+        unhoveredBackgroundColor: Theme.fileButtonUnhoveredBackgroundColor
+        hoveredBackgroundColor: Theme.fileButtonHoveredBackgroundColor
+        unhoveredTextColor: Theme.fileButtonUnhoveredTextColor
+        hoveredTextColor: Theme.fileButtonHoveredTextColor
         anchors.right: sendButton.left
         anchors.bottom: parent.bottom
     }
