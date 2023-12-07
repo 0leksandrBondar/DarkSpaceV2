@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.15
+import QtQuick.Controls.Basic
+
 
 import Theme 1.0
 
@@ -19,32 +20,29 @@ Rectangle
         anchors.right: fileButton.left
     }
 
-    CustomButton
+    Button
     {
         id: sendButton
-        width: 60
+        width: 50
         height: 50
-        buttonRadius: 10
-        buttonText: qsTr("send")
-        unhoveredBackgroundColor: Theme.sendButtonUnhoveredBackgroundColor
-        hoveredBackgroundColor: Theme.sendButtonHoveredBackgroundColor
-        unhoveredTextColor: Theme.sendButtonUnhoveredTextColor
-        hoveredTextColor: Theme.sendButtonHoveredTextColor
         anchors.right: parent.right
-        anchors.bottom: parent.bottom
+        icon.source: Theme.iconSendPath
+        background: Rectangle
+        {
+            color: Theme.inputMessageFieldColor
+        }
     }
-    CustomButton
+
+    Button
     {
         id: fileButton
-        width: 60
+        width: 50
         height: 50
-        buttonRadius: 10
-        buttonText: qsTr("file")
-        unhoveredBackgroundColor: Theme.fileButtonUnhoveredBackgroundColor
-        hoveredBackgroundColor: Theme.fileButtonHoveredBackgroundColor
-        unhoveredTextColor: Theme.fileButtonUnhoveredTextColor
-        hoveredTextColor: Theme.fileButtonHoveredTextColor
         anchors.right: sendButton.left
-        anchors.bottom: parent.bottom
+        icon.source: Theme.iconFolderPath
+        background: Rectangle
+        {
+            color: Theme.inputMessageFieldColor
+        }
     }
 }
