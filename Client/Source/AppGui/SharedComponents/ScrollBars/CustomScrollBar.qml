@@ -7,13 +7,15 @@ import Theme 1.0
 ScrollBar
 {
    visible: parent.contentHeight > parent.height
-   background: Rectangle {
+   background: Rectangle
+   {
        width: 10
        radius: 20
        color: Theme.scrollBarBackgroundColor
        anchors.right: parent.right
    }
-   contentItem: Rectangle {
+   contentItem: Rectangle
+   {
        radius: 20
        color: Theme.scrollBarItemColor
        implicitWidth: 10

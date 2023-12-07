@@ -3,7 +3,8 @@ import QtQuick.Controls 2.15
 
 import Theme 1.0
 
-Rectangle {
+Rectangle
+{
     id: messageBox
 
     property int maxWidth: 350
@@ -21,7 +22,8 @@ Rectangle {
 
     width: calculateWidth()
 
-    function calculateWidth() {
+    function calculateWidth()
+    {
         if (messageText.width < ownerName.width)
             return ownerName.width + 20;
         else if (messageText.width <= maxWidth)
@@ -35,7 +37,8 @@ Rectangle {
 
     radius: radius_
 
-    Canvas {
+    Canvas
+    {
         id: triangle
         property int triangleWidth: 40
         property int triangleHeight: 5
@@ -43,10 +46,12 @@ Rectangle {
         height: messageBox.height
         anchors.left: messageBox.left
 
-        onPaint: {
+        onPaint:
+        {
             drawTriangle()
         }
-        function drawTriangle() {
+        function drawTriangle()
+        {
             var ctx = getContext("2d");
             ctx.beginPath();
             ctx.moveTo(0, height);

@@ -17,18 +17,21 @@ Rectangle
     anchors.bottom: inputField.top
     color: Theme.correspondenceSceneBackgroundColor
 
-    ListModel {
+    ListModel
+    {
         id: listModel
     }
 
-    ListView {
+    ListView
+    {
         id: listView
         clip: true
         boundsBehavior: Flickable.StopAtBounds
         model: listModel
         spacing: 5
 
-        anchors {
+        anchors
+        {
             fill: parent
             bottom: parent.bottom
             left: parent.left
@@ -36,7 +39,8 @@ Rectangle
             topMargin: 2
         }
 
-        delegate: MessageUnit {
+        delegate: MessageUnit
+        {
             message: model.message
             owner: model.owner
             currentTimeValue: model.currentTimeValue
@@ -49,7 +53,9 @@ Rectangle
         }
     }
 
-    Component.onCompleted: {
+    //TODO: A message should be created when the send button is pressed.
+    Component.onCompleted:
+    {
         listModel.append({"owner": "Serhii", "message": "Hi", "currentTimeValue": Qt.formatDateTime(new Date(),  "hh:mm"), "isSenderMe": true})
         listModel.append({"owner": "Valerii", "message": "Who are you?", "currentTimeValue": Qt.formatDateTime(new Date(), "hh:mm"), "isSenderMe": false})
         listModel.append({"owner": "Serhii", "message": "I`m Serhii", "currentTimeValue": Qt.formatDateTime(new Date(), "hh:mm"), "isSenderMe": true})
