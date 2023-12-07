@@ -20,16 +20,10 @@ add_custom_command(TARGET Resource PRE_BUILD
         ${CMAKE_SOURCE_DIR}/Resource
         ${CMAKE_CURRENT_BINARY_DIR}/Resource)
 
-add_custom_target(
-        Copy-Assets
-        COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_CURRENT_BINARY_DIR}/Resource
-        COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/Resource
-        COMMAND ${CMAKE_COMMAND} -E copy_directory
-        ${CMAKE_SOURCE_DIR}/Resource
-        ${CMAKE_CURRENT_BINARY_DIR}/Resource
-)
 
-add_executable(DarkSpace ${SOURCES})
+set(APP_ICON_PATH ${CMAKE_SOURCE_DIR}/Resource/AppIcon/AppIcon.rc)
+
+add_executable(DarkSpace ${SOURCES} ${APP_ICON_PATH})
 
 add_dependencies(DarkSpace Resource)
 
