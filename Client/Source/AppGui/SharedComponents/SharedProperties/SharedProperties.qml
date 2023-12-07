@@ -37,4 +37,7 @@ QtObject
     // --------------- icon paths -----------------
     readonly property string iconSendPath: "file:Resource/ButtonIcons/send.png"
     readonly property string iconFolderPath: "file:Resource/ButtonIcons/folder.png"
+    readonly property string iconInfoPath: "file:Resource/ButtonIcons/info.png"
+    readonly property string iconPhonePath: "file:Resource/ButtonIcons/phone.png"
+    readonly property string iconSearchPath: "file:Resource/ButtonIcons/search.png"
 }
