@@ -4,6 +4,8 @@ import QtQuick.Controls.Material 2.15
 
 import Theme 1.0
 
+import "../../SharedComponents/ScrollBars"
+
 Rectangle
 {
     id: correspondensScene
@@ -41,25 +43,10 @@ Rectangle
             isSenderMe: model.isSenderMe
         }
 
-        ScrollBar.vertical: ScrollBar
+        ScrollBar.vertical: CustomScrollBar
         {
-            visible: listView.contentHeight > listView.height
-            background: Rectangle
-            {
-                width: 10
-                radius: 20
-                color: Theme.scrollBarBackgroundColor
-                anchors.right: parent.right
-            }
-            contentItem: Rectangle
-            {
-                radius: 20
-                color: Theme.scrollBarItemColor
-                implicitWidth: 10
-                anchors.right: parent.right
-            }
-        }
 
+        }
     }
 
     Component.onCompleted: {

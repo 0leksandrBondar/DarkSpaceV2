@@ -23,5 +23,6 @@
         <file>SharedComponents/TextFields/CustomTextField.qml</file>
         <file>SharedComponents/TextEditors/CustomTextEditor.qml</file>
         <file>SharedComponents/SharedProperties/SharedProperties.qml</file>
+        <file>SharedComponents/ScrollBars/CustomScrollBar.qml</file>
     </qresource>
 </RCC>
