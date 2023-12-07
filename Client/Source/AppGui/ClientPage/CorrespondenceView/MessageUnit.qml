@@ -8,8 +8,8 @@ Rectangle {
 
     property int maxWidth: 350
     property int radius_: 10
-    property string message: qsTr("")
-    property string owner: qsTr("")
+    property string message: qsTr("default")
+    property string owner: qsTr("default")
     property string currentTimeValue: ""
     property bool isSenderMe: false
     property int ownerNameTextSize: 15
@@ -86,7 +86,7 @@ Rectangle {
         topPadding: messagetTextTopPadding
 
         leftPadding: messagetTextLeftPadding
-        color: "white"
+        color: Theme.messageTextColor
         wrapMode: Text.WordWrap
         width: textMetrics.width >= maxWidth ? maxWidth : textMetrics.width + 50
         font.pixelSize: 15
@@ -100,7 +100,7 @@ Rectangle {
         anchors.right: parent.right
         bottomPadding: 5
         rightPadding: 5
-        color: Theme.messageTextColor
+        color: Theme.timeIndicatorTextColor
         font.pixelSize: 10
     }
 }
