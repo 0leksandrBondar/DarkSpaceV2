@@ -8,7 +8,7 @@ import "../../SharedComponents/TextEditors"
 Rectangle
 {
     id: inputMessageField
-    color:  "#29272e"
+    color:  "#282e33"
     radius: 10
 
     CustomTextEditor
@@ -24,10 +24,10 @@ Rectangle
         height: 50
         buttonRadius: 10
         buttonText: qsTr("send")
-        unhoveredBackgroundColor: "#29272e"
-        hoveredBackgroundColor: "#29272e"
-        unhoveredTextColor: "#05b56c"
-        hoveredTextColor: "#00ff95"
+        unhoveredBackgroundColor: "#282e33"
+        hoveredBackgroundColor: "#282e33"
+        unhoveredTextColor: "#3cb3a4"
+        hoveredTextColor: "#3cb3f4"
         anchors.right: parent.right
         anchors.bottom: parent.bottom
     }
@@ -38,10 +38,10 @@ Rectangle
         height: 50
         buttonRadius: 10
         buttonText: qsTr("file")
-        unhoveredBackgroundColor: "#29272e"
-        hoveredBackgroundColor: "#29272e"
-        unhoveredTextColor: "#05b56c"
-        hoveredTextColor: "#00ff95"
+        unhoveredBackgroundColor: "#282e33"
+        hoveredBackgroundColor: "#282e33"
+        unhoveredTextColor: "#3cb3a4"
+        hoveredTextColor: "#3cb3f4"
         anchors.right: sendButton.left
         anchors.bottom: parent.bottom
     }

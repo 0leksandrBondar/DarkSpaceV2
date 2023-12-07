@@ -19,7 +19,6 @@ Rectangle
         anchors.bottom: inputField.top
     }
 
-
     InputMessageField
     {
         id: inputField

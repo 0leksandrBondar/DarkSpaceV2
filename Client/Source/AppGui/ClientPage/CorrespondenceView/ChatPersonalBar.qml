@@ -6,7 +6,7 @@ Rectangle
     width: parent.width
     height: 50
     anchors.top: parent.top
-    color:  "#29272e"
+    color:  "#282e33"
     Text
     {
         width: parent.width / 3

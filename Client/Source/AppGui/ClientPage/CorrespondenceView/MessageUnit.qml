@@ -1,6 +1,8 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
+import Theme 1.0
+
 Rectangle {
     id: messageBox
 
@@ -8,7 +10,7 @@ Rectangle {
     property int radius_: 10
     property string message: qsTr("")
     property string owner: qsTr("")
-    property string currentTimeValue: "time"
+    property string currentTimeValue: ""
     property bool isSenderMe: false
     property int ownerNameTextSize: 15
     property int ownerNameLeftPadding: 10
@@ -29,7 +31,7 @@ Rectangle {
     }
 
     height: messageBoxHeight
-    color: isSenderMe ? "#2F4F4F" : "#696969"
+    color: isSenderMe ? Theme.messageColor : Theme.interlocutorsMessageColor
 
     radius: radius_
 
@@ -67,7 +69,7 @@ Rectangle {
     {
         id: ownerName
         font.bold: true
-        color: "black"
+        color: isSenderMe ? Theme.ownerNameColor : Theme.interlocutorsNameColor
         anchors.top: parent.top
         topPadding: ownerNameTopPadding
         leftPadding: ownerNameLeftPadding
@@ -86,8 +88,8 @@ Rectangle {
         leftPadding: messagetTextLeftPadding
         color: "white"
         wrapMode: Text.WordWrap
-        width: textMetrics.width >= maxWidth ? maxWidth : textMetrics.width + 50 //TODO: Replace the magic number
-        font.pixelSize: 15 // TODO: Replace the magic number
+        width: textMetrics.width >= maxWidth ? maxWidth : textMetrics.width + 50
+        font.pixelSize: 15
     }
 
     Text
@@ -98,7 +100,7 @@ Rectangle {
         anchors.right: parent.right
         bottomPadding: 5
         rightPadding: 5
-        color: "#B0B0B0"
-        font.pixelSize: 10 // TODO: Replace the magic number
+        color: Theme.messageTextColor
+        font.pixelSize: 10
     }
 }
