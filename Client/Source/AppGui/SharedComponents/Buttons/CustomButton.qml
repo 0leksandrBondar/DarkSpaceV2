@@ -9,7 +9,7 @@ Button
     id: button
 
     property string buttonText  : qsTr("default")
-    property color unhoveredBackgroundColor  : Theme.buttonUnhoveredBackgrounColor
+    property color unhoveredBackgroundColor  : Theme.buttonUnhoveredBackgroundColor
     property color hoveredBackgroundColor  : Theme.buttonHoveredBackgroundColor
     property color hoveredTextColor  : Theme.buttonHoveredTextColor
     property color unhoveredTextColor  : Theme.buttonUnhoveredTextColor
