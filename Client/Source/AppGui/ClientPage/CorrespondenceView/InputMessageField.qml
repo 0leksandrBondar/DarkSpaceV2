@@ -34,7 +34,8 @@ Rectangle
             color: Theme.inputMessageFieldColor
         }
 
-        onClicked: {
+        onClicked:
+        {
             sendButtonClicked(textEditor.text);
             textEditor.clear()
         }

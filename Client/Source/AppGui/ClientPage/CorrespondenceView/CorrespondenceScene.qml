@@ -53,7 +53,8 @@ Rectangle
         }
     }
 
-    function addMessage(text) {
+    function addMessage(text)
+    {
         listModel.append({"owner": "Your name", "message": text.toString(), "currentTimeValue": Qt.formatDateTime(new Date(),  "hh:mm"), "isSenderMe": true})
     }
 }
