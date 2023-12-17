@@ -2,7 +2,6 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Controls.Basic
 
-
 import Theme 1.0
 
 import "../../SharedComponents/Buttons"
@@ -10,6 +9,8 @@ import "../../SharedComponents/TextEditors"
 
 Rectangle
 {
+    signal sendButtonClicked(string text)
+
     id: inputMessageField
     color:  Theme.inputMessageFieldColor
     radius: 10
@@ -23,6 +24,7 @@ Rectangle
     Button
     {
         id: sendButton
+
         width: 50
         height: 50
         anchors.right: parent.right
@@ -30,6 +32,12 @@ Rectangle
         background: Rectangle
         {
             color: Theme.inputMessageFieldColor
+        }
+
+        onClicked:
+        {
+            sendButtonClicked(textEditor.text);
+            textEditor.clear()
         }
     }
 

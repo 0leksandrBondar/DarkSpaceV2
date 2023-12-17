@@ -11,6 +11,7 @@ Flickable
     contentWidth: textEdit.contentWidth
     contentHeight: textEdit.contentHeight
     boundsBehavior: Flickable.StopAtBounds
+    property string text: qsTr("default")
     function ensureVisible(r)
     {
         if (contentX >= r.x)
@@ -22,6 +23,12 @@ Flickable
         else if (contentY+height <= r.y+r.height)
             contentY = r.y+r.height-height;
     }
+
+    function clear()
+    {
+        textEdit.clear();
+    }
+
     TextEdit
     {
         id: textEdit
@@ -37,12 +44,18 @@ Flickable
         wrapMode: TextEdit.Wrap
         leftPadding: 15
         verticalAlignment: Text.AlignVCenter
+
         onCursorRectangleChanged:
         {
            if(contentHeight > inputMessageField.height && inputMessageField.height < appWindow.height / 3)
                 inputMessageField.height = contentHeight;
            if(inputMessageField.height > appWindow.height / 3)
                 inputMessageField.height = appWindow.height / 3;
+        }
+
+        onTextChanged:
+        {
+            flick.text = textEdit.text
         }
     }
 }

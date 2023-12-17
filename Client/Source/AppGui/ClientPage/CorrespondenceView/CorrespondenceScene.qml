@@ -53,11 +53,8 @@ Rectangle
         }
     }
 
-    //TODO: A message should be created when the send button is pressed.
-    Component.onCompleted:
+    function addMessage(text)
     {
-        listModel.append({"owner": "Serhii", "message": "Hi", "currentTimeValue": Qt.formatDateTime(new Date(),  "hh:mm"), "isSenderMe": true})
-        listModel.append({"owner": "Valerii", "message": "Who are you?", "currentTimeValue": Qt.formatDateTime(new Date(), "hh:mm"), "isSenderMe": false})
-        listModel.append({"owner": "Serhii", "message": "I`m Serhii", "currentTimeValue": Qt.formatDateTime(new Date(), "hh:mm"), "isSenderMe": true})
+        listModel.append({"owner": "Your name", "message": text.toString(), "currentTimeValue": Qt.formatDateTime(new Date(),  "hh:mm"), "isSenderMe": true})
     }
 }
