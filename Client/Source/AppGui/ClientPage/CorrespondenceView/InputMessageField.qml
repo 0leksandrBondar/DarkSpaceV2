@@ -15,10 +15,24 @@ Rectangle
     color:  Theme.inputMessageFieldColor
     radius: 10
 
+    function sendMessage()
+    {
+        sendButtonClicked(textEditor.text);
+        textEditor.clear();
+    }
+
     CustomTextEditor
     {
         id:textEditor
         anchors.right: fileButton.left
+
+        Keys.onPressed: function(event)
+        {
+            if (event.key === Qt.Key_Return && event.modifiers & Qt.ControlModifier)
+            {
+                sendMessage()
+            }
+        }
     }
 
     Button
@@ -36,8 +50,7 @@ Rectangle
 
         onClicked:
         {
-            sendButtonClicked(textEditor.text);
-            textEditor.clear()
+            sendMessage()
         }
     }
 
