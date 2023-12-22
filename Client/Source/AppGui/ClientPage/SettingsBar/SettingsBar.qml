@@ -21,5 +21,6 @@ Rectangle
         {
             color: moreButton.hovered ? "#434543" : Theme.correspondenceSceneBackgroundColor
         }
+        onClicked: moreDialogWindow.open()
     }
 }

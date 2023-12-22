@@ -13,12 +13,13 @@
         <file>ClientPage/CorrespondenceView/CorrespondenceView.qml</file>
         <file>ClientPage/CorrespondenceView/CorrespondenceScene.qml</file>
         <file>ClientPage/CorrespondenceView/MessageUnit.qml</file>
+        <file>ClientPage/SettingsBar/SettingsBar.qml</file>
         <file>ViewControllers/PageSwitcher.qml</file>
         <file>SharedComponents/Buttons/CustomButton.qml</file>
         <file>SharedComponents/TextFields/CustomTextField.qml</file>
         <file>SharedComponents/TextEditors/CustomTextEditor.qml</file>
         <file>SharedComponents/SharedProperties/SharedProperties.qml</file>
         <file>SharedComponents/ScrollBars/CustomScrollBar.qml</file>
-        <file>ClientPage/SettingsBar/SettingsBar.qml</file>
+        <file>DialogWindows/MoreDialogWindow.qml</file>
     </qresource>
 </RCC>
