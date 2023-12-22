@@ -2,27 +2,23 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>WelcomePage.qml</file>
-
         <file>SignInPages/SignInPage.qml</file>
         <file>SignInPages/SignUpPage.qml</file>
-
         <file>ClientPage/ClientPage.qml</file>
         <file>ClientPage/ChatListView/ChatBlock.qml</file>
         <file>ClientPage/ChatListView/ChatListView.qml</file>
         <file>ClientPage/ChatListView/ChatSearchLine.qml</file>
-
         <file>ClientPage/CorrespondenceView/InputMessageField.qml</file>
         <file>ClientPage/CorrespondenceView/ChatPersonalBar.qml</file>
         <file>ClientPage/CorrespondenceView/CorrespondenceView.qml</file>
         <file>ClientPage/CorrespondenceView/CorrespondenceScene.qml</file>
         <file>ClientPage/CorrespondenceView/MessageUnit.qml</file>
-
         <file>ViewControllers/PageSwitcher.qml</file>
-
         <file>SharedComponents/Buttons/CustomButton.qml</file>
         <file>SharedComponents/TextFields/CustomTextField.qml</file>
         <file>SharedComponents/TextEditors/CustomTextEditor.qml</file>
         <file>SharedComponents/SharedProperties/SharedProperties.qml</file>
         <file>SharedComponents/ScrollBars/CustomScrollBar.qml</file>
+        <file>ClientPage/SettingsBar/SettingsBar.qml</file>
     </qresource>
 </RCC>

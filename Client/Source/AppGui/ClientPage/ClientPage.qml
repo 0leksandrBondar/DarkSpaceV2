@@ -4,6 +4,7 @@ import QtQuick.Controls.Material 2.15
 
 import "./ChatListView"
 import "./CorrespondenceView"
+import "./SettingsBar"
 
 Rectangle
 {
@@ -16,11 +17,19 @@ Rectangle
     ChatListView
     {
         id: chatListView
+        anchors.left: settingsBar.right
     }
+
+    SettingsBar
+    {
+        id: settingsBar
+        anchors.left: parent.left
+    }
+
     CorrespondenceView
     {
-        width: parent.width - chatListView.width
+        width: parent.width - (chatListView.width + settingsBar.width)
         height: parent.height
-        anchors.right: clientPage.right
+        anchors.left: chatListView.right
     }
 }
