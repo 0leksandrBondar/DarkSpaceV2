@@ -16,8 +16,8 @@ Rectangle
     property int ownerNameTextSize: 15
     property int ownerNameLeftPadding: 10
     property int ownerNameTopPadding: 1
-    property int messagetTextTopPadding: 1
-    property int messagetTextLeftPadding: 10
+    property int messageTextTopPadding: 1
+    property int messageTextLeftPadding: 10
     property int messageBoxHeight: ownerName.height + messageText.height + 10
 
     width: calculateWidth()

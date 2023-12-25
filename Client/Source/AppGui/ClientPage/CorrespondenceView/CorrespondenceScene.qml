@@ -55,6 +55,6 @@ Rectangle
 
     function addMessage(text)
     {
-        listModel.append({"owner": "Your name", "message": text.toString(), "currentTimeValue": Qt.formatDateTime(new Date(),  "hh:mm"), "isSenderMe": true})
+        listModel.append({"owner": _userData.getUserName(), "message": text.toString(), "currentTimeValue": Qt.formatDateTime(new Date(),  "hh:mm"), "isSenderMe": true})
     }
 }

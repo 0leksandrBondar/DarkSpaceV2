@@ -77,7 +77,14 @@ Rectangle
         anchors.bottomMargin: parent.height / 4
         onClicked:
         {
-            logInClicked()
+            if (_userData.handleUserName(userNameField.text))
+            {
+                logInClicked()
+            }
+            else
+            {
+                console.log("username field cannot be empty")
+            }
         }
     }
 }
