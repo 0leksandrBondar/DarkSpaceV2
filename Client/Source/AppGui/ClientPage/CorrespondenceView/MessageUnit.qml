@@ -88,9 +88,9 @@ Rectangle
         id: messageText
         text: messageBox.message
         anchors.top: ownerName.bottom
-        topPadding: messagetTextTopPadding
+        topPadding: messageTextTopPadding
 
-        leftPadding: messagetTextLeftPadding
+        leftPadding: messageTextLeftPadding
         color: Theme.messageTextColor
         wrapMode: Text.WordWrap
         width: textMetrics.width >= maxWidth ? maxWidth : textMetrics.width + 50
