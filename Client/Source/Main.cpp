@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
     const QUrl url(QStringLiteral("qrc:/main.qml"));
 
     UserData userData;
-    engine.rootContext()->setContextProperty("_userData", &userData);
+    engine.rootContext()->setContextProperty(QStringLiteral("_userData"), &userData);
 
     qmlRegisterSingletonType(QStringLiteral(
                                  "qrc:/SharedComponents/SharedProperties/SharedProperties.qml"),

@@ -9,8 +9,8 @@ Rectangle
 
     property int maxWidth: 350
     property int radius_: 10
-    property string message: qsTr("default")
-    property string owner: qsTr("default")
+    property string message: qsTr("")
+    property string owner: qsTr("")
     property string currentTimeValue: ""
     property bool isSenderMe: false
     property int ownerNameTextSize: 15

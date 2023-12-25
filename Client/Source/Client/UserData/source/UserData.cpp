@@ -1,7 +1,5 @@
 #include "UserData.h"
 
-#include <QDebug>
-
 UserData::UserData(QObject* parent) : QObject(parent) {}
 
 QString UserData::getUserName() const { return _userName; }
