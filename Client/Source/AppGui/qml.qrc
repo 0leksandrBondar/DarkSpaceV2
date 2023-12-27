@@ -20,6 +20,9 @@
         <file>SharedComponents/TextEditors/CustomTextEditor.qml</file>
         <file>SharedComponents/SharedProperties/SharedProperties.qml</file>
         <file>SharedComponents/ScrollBars/CustomScrollBar.qml</file>
-        <file>DialogWindows/MoreDialogWindow.qml</file>
+        <file>DialogWindows/MoreDialogWindow/MoreDialogWindow.qml</file>
+        <file>DialogWindows/MoreDialogWindow/OptionBlock.qml</file>
+        <file>DialogWindows/MoreDialogWindow/OptionList.qml</file>
+        <file>MoreOptionPages/ChatOptionPages/AddNewChatPage.qml</file>
     </qresource>
 </RCC>
