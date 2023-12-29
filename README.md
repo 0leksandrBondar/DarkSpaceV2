@@ -8,4 +8,7 @@
 
 ![image](https://github.com/0leksandrBondar/DarkSpaceV2/assets/104301715/30a15491-593a-41c7-a968-2fb52c78f581)
 
+![image](https://github.com/0leksandrBondar/DarkSpaceV2/assets/104301715/5de95551-93ce-4bdb-bd67-82ffc4eb685f)
+
+
 
