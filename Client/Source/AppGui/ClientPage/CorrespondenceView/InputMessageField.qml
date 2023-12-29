@@ -17,8 +17,12 @@ Rectangle
 
     function sendMessage()
     {
-        sendButtonClicked(textEditor.text);
-        textEditor.clear();
+        var message = textEditor.text;
+        if (message !== "" && /[a-zA-Z]/.test(message))
+        {
+            sendButtonClicked(message);
+            textEditor.clear();
+        }
     }
 
     CustomTextEditor

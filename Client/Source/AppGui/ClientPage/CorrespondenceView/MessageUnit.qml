@@ -9,15 +9,15 @@ Rectangle
 
     property int maxWidth: 350
     property int radius_: 10
-    property string message: qsTr("default")
-    property string owner: qsTr("default")
+    property string message: qsTr("")
+    property string owner: qsTr("")
     property string currentTimeValue: ""
     property bool isSenderMe: false
     property int ownerNameTextSize: 15
     property int ownerNameLeftPadding: 10
     property int ownerNameTopPadding: 1
-    property int messagetTextTopPadding: 1
-    property int messagetTextLeftPadding: 10
+    property int messageTextTopPadding: 1
+    property int messageTextLeftPadding: 10
     property int messageBoxHeight: ownerName.height + messageText.height + 10
 
     width: calculateWidth()
@@ -88,9 +88,9 @@ Rectangle
         id: messageText
         text: messageBox.message
         anchors.top: ownerName.bottom
-        topPadding: messagetTextTopPadding
+        topPadding: messageTextTopPadding
 
-        leftPadding: messagetTextLeftPadding
+        leftPadding: messageTextLeftPadding
         color: Theme.messageTextColor
         wrapMode: Text.WordWrap
         width: textMetrics.width >= maxWidth ? maxWidth : textMetrics.width + 50
