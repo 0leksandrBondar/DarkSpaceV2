@@ -10,6 +10,7 @@ Rectangle
     color: Theme.inputMessageFieldColor
 
     property string optionName : "none"
+    property string pathToComponent : "none"
     property color onHoveredColor : "#434543"
 
     Text
@@ -34,6 +35,12 @@ Rectangle
         }
         onClicked:
         {
+            var  component = Qt.createComponent(pathToComponent);
+            if (component.status === Component.Ready)
+            {
+                var dialog = component.createObject(parent);
+                dialog.open();
+            }
         }
     }
 }

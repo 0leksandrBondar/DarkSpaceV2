@@ -4,6 +4,7 @@ import Theme 1.0
 
 Dialog
 {
+    id: moreOptionWindow
     modal: true
     background: Rectangle
     {
@@ -20,7 +21,9 @@ Dialog
         boundsBehavior: Flickable.StopAtBounds
         delegate: OptionBlock
         {
+            id: optionBlock
             optionName: model.optionName
+            pathToComponent: model.pathToComponent
         }
     }
 }

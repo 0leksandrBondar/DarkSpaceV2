@@ -13,6 +13,7 @@ ListModel
     ListElement
     {
         optionName: qsTr("Create new chat")
+        pathToComponent: qsTr("qrc:/MoreOptionPages/ChatOptionPages/AddNewChatPage.qml")
     }
     ListElement
     {

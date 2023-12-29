@@ -13,7 +13,7 @@ public:
 
 public slots:
     bool handleUserName(const QString& userName);
-    QString getUserName() const;
+    [[nodiscard]] QString getUserName() const;
 
 private:
     QString _userName{};
