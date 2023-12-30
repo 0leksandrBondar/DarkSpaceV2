@@ -19,7 +19,7 @@ Rectangle
         anchors.top: parent.top
         background: Rectangle
         {
-            color: moreButton.hovered ? "#434543" : Theme.correspondenceSceneBackgroundColor
+            color: moreButton.hovered ? Theme.onHoveredButtonColor : Theme.correspondenceSceneBackgroundColor
         }
         onClicked: moreDialogWindow.open()
     }

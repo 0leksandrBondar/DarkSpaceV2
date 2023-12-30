@@ -6,12 +6,21 @@ import Theme 1.0
 Rectangle
 {
     width: parent.width
-    height: 40
+    height: 50
     color: Theme.inputMessageFieldColor
 
     property string optionName : "none"
     property string pathToComponent : "none"
-    property color onHoveredColor : "#434543"
+
+    Image
+    {
+        id: icon
+        width: 40
+        height: 40
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: parent.left
+        source: model.icon
+    }
 
     Text
     {
@@ -19,6 +28,8 @@ Rectangle
         text: optionName
         color: "white"
         font.pointSize: 14
+        anchors.left: icon.right
+        anchors.leftMargin: 10
         anchors.verticalCenter: parent.verticalCenter
     }
     MouseArea
@@ -27,7 +38,7 @@ Rectangle
         hoverEnabled: true
         onEntered:
         {
-            parent.color = onHoveredColor
+            parent.color = Theme.onHoveredButtonColor
         }
         onExited:
         {

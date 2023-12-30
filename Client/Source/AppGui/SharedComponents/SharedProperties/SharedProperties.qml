@@ -33,6 +33,7 @@ QtObject
     readonly property color inputMessageFieldColor: "#282e33"
     readonly property color personalBarColor: "#282e33"
     readonly property color personalBarTextColor: "white"
+    readonly property color onHoveredButtonColor: "#434543"
 
     // --------------- icon paths -----------------
     readonly property string iconSendPath: "file:Resource/ButtonIcons/send.png"

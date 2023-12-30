@@ -25,16 +25,6 @@ Dialog
         font.bold: true
     }
 
-    // Button
-    // {
-    //     id: backButton
-    //     width: 50
-    //     height: 50
-    //     anchors.top: parent.top
-    //     anchors.left: parent.left
-    //     text: "back"
-    // }
-
     CustomTextField
     {
         id: searchLine
