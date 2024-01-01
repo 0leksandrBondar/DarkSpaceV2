@@ -49,9 +49,8 @@ Rectangle
         icon.source: Theme.iconSendPath
         background: Rectangle
         {
-            color: Theme.inputMessageFieldColor
+            color: sendButton.hovered ? "#434543" : Theme.inputMessageFieldColor
         }
-
         onClicked:
         {
             sendMessage()
@@ -67,7 +66,7 @@ Rectangle
         icon.source: Theme.iconFolderPath
         background: Rectangle
         {
-            color: Theme.inputMessageFieldColor
+            color: fileButton.hovered ? "#434543" : Theme.inputMessageFieldColor
         }
     }
 }

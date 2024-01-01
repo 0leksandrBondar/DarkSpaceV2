@@ -13,6 +13,11 @@ Rectangle
     height: parent.height
     anchors.left: parent.left
 
+    function addNewChat(chatName)
+    {
+        chatBlockList.append({"text": chatName});
+    }
+
     ChatSearchLine
     {
         id: chatSearchLine
@@ -31,25 +36,7 @@ Rectangle
 
         ListModel
         {
-        // --- temp (test case)
             id: chatBlockList
-            ListElement { text: "Message 1" }
-            ListElement { text: "Message 2" }
-            ListElement { text: "Message 3" }
-            ListElement { text: "Message 4" }
-            ListElement { text: "Message 5" }
-            ListElement { text: "Message 6" }
-            ListElement { text: "Message 7" }
-            ListElement { text: "Message 8" }
-            ListElement { text: "Message 9" }
-            ListElement { text: "Message 10" }
-            ListElement { text: "Message 11" }
-            ListElement { text: "Message 12" }
-            ListElement { text: "Message 13" }
-            ListElement { text: "Message 14" }
-            ListElement { text: "Message 15" }
-            ListElement { text: "Message 16" }
-            ListElement { text: "Message 17" }
         }
 
         ListView
@@ -60,7 +47,7 @@ Rectangle
             model: chatBlockList
             orientation: Qt.Vertical
             boundsBehavior: Flickable.StopAtBounds
-            verticalLayoutDirection: ListView.BottomToTop
+            verticalLayoutDirection: ListView.TopToBottom
             delegate: ChatBlock
             {
                 title: model.text
