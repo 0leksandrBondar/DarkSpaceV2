@@ -64,7 +64,7 @@ Rectangle
 
     CustomButton
     {
-        id: signInButton
+        id: backButton
         buttonText: qsTr("Back")
         anchors.bottom: parent.bottom
         anchors.right: parent.horizontalCenter
