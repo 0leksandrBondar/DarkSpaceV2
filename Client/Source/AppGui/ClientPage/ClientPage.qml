@@ -25,6 +25,10 @@ Rectangle
     {
         id: chatListView
         anchors.left: settingsBar.right
+        onClickOnChatBlock: function(chatName)
+         {
+             correspondenceView.updateRecipientName(chatName)
+         }
     }
 
     SettingsBar
@@ -35,6 +39,7 @@ Rectangle
 
     CorrespondenceView
     {
+        id: correspondenceView
         width: parent.width - (chatListView.width + settingsBar.width)
         height: parent.height
         anchors.left: chatListView.right
