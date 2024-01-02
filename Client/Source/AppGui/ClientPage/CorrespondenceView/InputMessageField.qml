@@ -17,8 +17,8 @@ Rectangle
 
     function sendMessage()
     {
-        var message = textEditor.text;
-        if (message !== "" && /[a-zA-Z]/.test(message))
+        var message = textEditor.text.trim();
+        if (message !== "")
         {
             sendButtonClicked(message);
             textEditor.clear();
