@@ -3,69 +3,60 @@ import QtQuick.Controls 2.15
 import QtQuick.Controls.Basic
 
 import Theme 1.0
+import Message 1.0
 
 import "../../SharedComponents/Buttons"
 import "../../SharedComponents/TextEditors"
 
-Rectangle
-{
+Rectangle {
     signal sendButtonClicked(string text)
 
     id: inputMessageField
-    color:  Theme.inputMessageFieldColor
+    color: Theme.inputMessageFieldColor
     radius: 10
 
-    function sendMessage()
-    {
+    function sendMessage() {
         var message = textEditor.text;
-        if (message !== "" && /[a-zA-Z]/.test(message))
-        {
+        if (message !== "" && /[a-zA-Z]/.test(message)) {
             sendButtonClicked(message);
+            client.sendMessage(Message.MessageType.TextMessage, "", textEditor.text)
             textEditor.clear();
         }
     }
 
-    CustomTextEditor
-    {
-        id:textEditor
+    CustomTextEditor {
+        id: textEditor
         anchors.right: fileButton.left
 
-        Keys.onPressed: function(event)
-        {
-            if (event.key === Qt.Key_Return && event.modifiers & Qt.ControlModifier)
-            {
+        Keys.onPressed: function (event) {
+            if (event.key === Qt.Key_Return && event.modifiers & Qt.ControlModifier) {
                 sendMessage()
             }
         }
     }
 
-    Button
-    {
+    Button {
         id: sendButton
 
         width: 50
         height: 50
         anchors.right: parent.right
         icon.source: Theme.iconSendPath
-        background: Rectangle
-        {
+        background: Rectangle {
             color: sendButton.hovered ? "#434543" : Theme.inputMessageFieldColor
         }
-        onClicked:
-        {
+        onClicked: {
             sendMessage()
         }
     }
 
-    Button
-    {
+    Button {
         id: fileButton
         width: 50
         height: 50
         anchors.right: sendButton.left
         icon.source: Theme.iconFolderPath
-        background: Rectangle
-        {
+        background: Rectangle {
             color: fileButton.hovered ? "#434543" : Theme.inputMessageFieldColor
         }
     }

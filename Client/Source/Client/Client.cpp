@@ -21,3 +21,14 @@
 // SOFTWARE.
 
 #include "Client.h"
+
+Client::Client() {}
+
+bool Client::handleUserName(const QString& userName) { return _userData.handleUserName(userName); }
+
+QString Client::getUserName() const { return _userData.getUserName(); }
+
+void Client::sendMessage(Message::MessageType type, const QString& sender, const QString& data)
+{
+    qDebug() << "Hello from client";
+}

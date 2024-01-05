@@ -23,7 +23,7 @@
 #include "Message.h"
 
 Message::Message(const QString& sender, const QDateTime& timestamp, MessageType type)
-    : _sender{ sender }, _timestamp{ timestamp }, _messageType{ type }
+    : QObject(), _sender{ sender }, _timestamp{ timestamp }, _messageType{ type }
 {
 }
 
@@ -31,4 +31,4 @@ QString Message::sender() const { return _sender; }
 
 QDateTime Message::timestamp() const { return _timestamp; }
 
-MessageType Message::messageType() const { return _messageType; }
+Message::MessageType Message::messageType() const { return _messageType; }

@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "UserData.h"
+#include "Client.h"
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
@@ -32,8 +32,10 @@ int main(int argc, char* argv[])
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
 
-    UserData userData;
-    engine.rootContext()->setContextProperty(QStringLiteral("_userData"), &userData);
+    Client client;
+    engine.rootContext()->setContextProperty(QStringLiteral("client"), &client);
+
+    qmlRegisterType<Message>("Message", 1, 0, "Message");
 
     qmlRegisterSingletonType(QStringLiteral(
                                  "qrc:/SharedComponents/SharedProperties/SharedProperties.qml"),

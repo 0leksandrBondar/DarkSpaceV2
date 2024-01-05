@@ -22,13 +22,23 @@
 
 #pragma once
 
-class Package
+#include "Message.h"
+
+struct Header
 {
-public:
-    struct Header
-    {
-    };
-    struct Body
-    {
-    };
+    QString sender;
+    Message::MessageType type;
+    QDateTime timestamp;
+    unsigned long long size;
+};
+
+struct Body
+{
+    QByteArray data;
+};
+
+struct Package
+{
+    Header header;
+    Body body;
 };
