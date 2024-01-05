@@ -6,36 +6,33 @@ import Theme 1.0
 import "../SharedComponents/Buttons"
 import "../SharedComponents/TextFields"
 
-Rectangle
-{
+Rectangle {
     width: appWindow.width
     height: appWindow.height
 
     signal backClicked()
+
     signal signUpClicked()
 
-    Image
-    {
+    Image {
         id: loginPageBackground
         anchors.fill: parent
         fillMode: Image.PreserveAspectCrop
         source: Theme.pathToBackgroundImage
     }
 
-    Text
-    {
+    Text {
         id: signUnLabel
         text: qsTr("SignUp")
         font.bold: true
         font.pointSize: 54
-        anchors.topMargin : 30
+        anchors.topMargin: 30
         color: Theme.labelColor
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
-    CustomTextField
-    {
+    CustomTextField {
         id: userNameField
         textPlaceholder: qsTr("User name")
         anchors.bottom: parent.verticalCenter
@@ -43,8 +40,7 @@ Rectangle
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
-    CustomTextField
-    {
+    CustomTextField {
         id: emailField
         textPlaceholder: qsTr("Email")
         anchors.top: userNameField.bottom
@@ -52,8 +48,7 @@ Rectangle
         anchors.topMargin: 30
     }
 
-    CustomTextField
-    {
+    CustomTextField {
         id: passwordField
         echoMode: TextInput.Password
         textPlaceholder: qsTr("Password")
@@ -62,36 +57,29 @@ Rectangle
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
-    CustomButton
-    {
+    CustomButton {
         id: backButton
         buttonText: qsTr("Back")
         anchors.bottom: parent.bottom
         anchors.right: parent.horizontalCenter
         anchors.rightMargin: parent.width / 10
         anchors.bottomMargin: parent.height / 4
-        onClicked:
-        {
+        onClicked: {
             backClicked()
         }
     }
 
-    CustomButton
-    {
+    CustomButton {
         id: signUpButton
         buttonText: qsTr("SignUp")
         anchors.bottom: parent.bottom
         anchors.left: parent.horizontalCenter
         anchors.leftMargin: parent.width / 10
         anchors.bottomMargin: parent.height / 4
-        onClicked:
-        {
-            if (_userData.handleUserName(userNameField.text))
-            {
+        onClicked: {
+            if (client.handleUserName(userNameField.text)) {
                 signUpClicked()
-            }
-            else
-            {
+            } else {
                 console.log("username field cannot be empty")
             }
         }

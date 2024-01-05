@@ -7,4 +7,8 @@ set(SOURCE
 
 add_library(Package ${SOURCE})
 
+target_link_libraries(Package
+        Messages
+)
+
 target_include_directories(Package PUBLIC ./)

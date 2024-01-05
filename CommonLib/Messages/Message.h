@@ -23,20 +23,23 @@
 #pragma once
 
 #include <QDateTime>
+#include <QObject>
 #include <QString>
 
-enum class MessageType
+class Message : public QObject
 {
-    Undefined,
-    TextMessage,
-    VideoMessage,
-    VoiceMessage,
-    ImageMessage
-};
-
-class Message
-{
+    Q_OBJECT
 public:
+    enum class MessageType
+    {
+        Undefined,
+        TextMessage,
+        VideoMessage,
+        VoiceMessage,
+        ImageMessage
+    };
+    Q_ENUM(MessageType)
+
     Message(const QString& sender, const QDateTime& timestamp,
             MessageType type = MessageType::Undefined);
 

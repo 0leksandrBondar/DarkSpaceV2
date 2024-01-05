@@ -6,8 +6,7 @@ import Theme 1.0
 
 import "../../SharedComponents/ScrollBars"
 
-Rectangle
-{
+Rectangle {
     id: correspondensScene
 
     property var message: null
@@ -17,21 +16,18 @@ Rectangle
     anchors.bottom: inputField.top
     color: Theme.correspondenceSceneBackgroundColor
 
-    ListModel
-    {
+    ListModel {
         id: listModel
     }
 
-    ListView
-    {
+    ListView {
         id: listView
         clip: true
         boundsBehavior: Flickable.StopAtBounds
         model: listModel
         spacing: 5
 
-        anchors
-        {
+        anchors {
             fill: parent
             bottom: parent.bottom
             left: parent.left
@@ -39,22 +35,24 @@ Rectangle
             topMargin: 2
         }
 
-        delegate: MessageUnit
-        {
+        delegate: MessageUnit {
             message: model.message
             owner: model.owner
             currentTimeValue: model.currentTimeValue
             isSenderMe: model.isSenderMe
         }
 
-        ScrollBar.vertical: CustomScrollBar
-        {
+        ScrollBar.vertical: CustomScrollBar {
 
         }
     }
 
-    function addMessage(text)
-    {
-        listModel.append({"owner": _userData.getUserName(), "message": text.toString(), "currentTimeValue": Qt.formatDateTime(new Date(),  "hh:mm"), "isSenderMe": true})
+    function addMessage(text) {
+        listModel.append({
+            "owner": client.getUserName(),
+            "message": text.toString(),
+            "currentTimeValue": Qt.formatDateTime(new Date(), "hh:mm"),
+            "isSenderMe": true
+        })
     }
 }

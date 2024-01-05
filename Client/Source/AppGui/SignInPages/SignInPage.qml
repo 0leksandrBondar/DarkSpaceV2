@@ -6,36 +6,33 @@ import Theme 1.0
 import "../SharedComponents/Buttons"
 import "../SharedComponents/TextFields"
 
-Rectangle
-{
+Rectangle {
     width: appWindow.width
     height: appWindow.height
 
     signal backClicked()
+
     signal logInClicked()
 
-    Image
-    {
+    Image {
         id: loginPageBackground
         anchors.fill: parent
         fillMode: Image.PreserveAspectCrop
         source: Theme.pathToBackgroundImage
     }
 
-    Text
-    {
+    Text {
         id: logInLabel
         text: qsTr("LogIn")
         anchors.top: parent.top
-        anchors.topMargin : 30
+        anchors.topMargin: 30
         anchors.horizontalCenter: parent.horizontalCenter
         color: Theme.labelColor
         font.pointSize: 54
         font.bold: true
     }
 
-    CustomTextField
-    {
+    CustomTextField {
         id: userNameField
         textPlaceholder: qsTr("User name")
         anchors.bottom: parent.verticalCenter
@@ -43,8 +40,7 @@ Rectangle
         anchors.bottomMargin: parent.height / 5
     }
 
-    CustomTextField
-    {
+    CustomTextField {
         id: passwordField
         textPlaceholder: qsTr("Password")
         echoMode: TextInput.Password
@@ -53,36 +49,29 @@ Rectangle
         anchors.topMargin: 30
     }
 
-    CustomButton
-    {
+    CustomButton {
         id: backButton
         buttonText: qsTr("Back")
         anchors.bottom: parent.bottom
         anchors.right: parent.horizontalCenter
         anchors.rightMargin: parent.width / 10
         anchors.bottomMargin: parent.height / 4
-        onClicked:
-        {
+        onClicked: {
             backClicked()
         }
     }
 
-    CustomButton
-    {
+    CustomButton {
         id: signUpButton
         buttonText: qsTr("LogIn")
         anchors.bottom: parent.bottom
         anchors.left: parent.horizontalCenter
         anchors.leftMargin: parent.width / 10
         anchors.bottomMargin: parent.height / 4
-        onClicked:
-        {
-            if (_userData.handleUserName(userNameField.text))
-            {
+        onClicked: {
+            if (client.handleUserName(userNameField.text)) {
                 logInClicked()
-            }
-            else
-            {
+            } else {
                 console.log("username field cannot be empty")
             }
         }
