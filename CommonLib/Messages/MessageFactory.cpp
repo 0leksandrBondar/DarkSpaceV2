@@ -10,7 +10,7 @@ Message* MessageFactory::createMessage(Message::MessageType type, const QString&
     case Message::MessageType::TextMessage:
         return new TextMessage(sender, timestamp);
 
-        //    implement it when it is necessary
+        //    TODO: implement it when it is necessary
         //    case Message::MessageType::VideoMessage:
         //        return new VideoMessage(sender, timestamp);
         //    case Message::MessageType::VoiceMessage:
