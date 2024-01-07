@@ -13,8 +13,14 @@ Rectangle
 
     property int space: 10
 
+    function setRecieverName(name)
+    {
+        recieverName.text = name
+    }
+
     Text
     {
+        id: recieverName
         width: parent.width / 3
         height: parent.height
         leftPadding: 20

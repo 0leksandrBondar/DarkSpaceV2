@@ -31,5 +31,9 @@ Rectangle
         {
             chatBlock.color = Material.background
         }
+        onClicked:
+        {
+            clickOnChatBlock(chatTitle.text)
+        }
     }
 }

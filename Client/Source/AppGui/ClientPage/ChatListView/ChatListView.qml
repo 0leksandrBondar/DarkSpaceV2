@@ -13,6 +13,8 @@ Rectangle
     height: parent.height
     anchors.left: parent.left
 
+    signal clickOnChatBlock(string chatName);
+
     function addNewChat(chatName)
     {
         chatBlockList.append({"text": chatName});

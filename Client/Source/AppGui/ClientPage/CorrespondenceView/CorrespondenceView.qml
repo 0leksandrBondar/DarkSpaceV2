@@ -6,6 +6,11 @@ Rectangle
 {
     color:  Material.background
 
+    function updateRecipientName(chatName)
+    {
+        personalBar.setRecieverName(chatName)
+    }
+
     ChatPersonalBar
     {
         id: personalBar
