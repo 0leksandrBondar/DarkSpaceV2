@@ -29,6 +29,9 @@ class TextMessage : public Message
 public:
     TextMessage(const QString& sender, const QDateTime& timestamp);
 
+    QString data() const;
+    void setData(const QByteArray& data);
+
 private:
     QString _data;
 };

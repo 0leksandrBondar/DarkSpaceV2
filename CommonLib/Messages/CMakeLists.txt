@@ -8,6 +8,8 @@ set(SOURCE Message.cpp
         Message.h
         TextMessage.cpp
         TextMessage.h
+        MessageFactory.cpp
+        MessageFactory.h
 )
 
 add_library(Messages ${SOURCE})
