@@ -11,7 +11,7 @@ Flickable
     contentWidth: textEdit.contentWidth
     contentHeight: textEdit.contentHeight
     boundsBehavior: Flickable.StopAtBounds
-    property string text: qsTr("default")
+    property string text: qsTr("")
     function ensureVisible(r)
     {
         if (contentX >= r.x)

@@ -7,16 +7,16 @@ Rectangle
 {
     id: messageBox
 
-    property int maxWidth: 350
-    property int radius_: 10
+    property int maxWidth: parent.width / 2
+    property int angleRadius: 10
     property string message: qsTr("")
     property string owner: qsTr("")
     property string currentTimeValue: ""
     property bool isSenderMe: false
     property int ownerNameTextSize: 15
     property int ownerNameLeftPadding: 10
-    property int ownerNameTopPadding: 1
-    property int messageTextTopPadding: 1
+    property int ownerNameTopPadding: 0
+    property int messageTextTopPadding: 0
     property int messageTextLeftPadding: 10
     property int messageBoxHeight: ownerName.height + messageText.height + 10
 
@@ -27,7 +27,7 @@ Rectangle
         if (messageText.width < ownerName.width)
             return ownerName.width + 20;
         else if (messageText.width <= maxWidth)
-            return messageText.width;
+            return messageText.width + timeIndicator.width;
         else
             return maxWidth;
     }
@@ -35,7 +35,7 @@ Rectangle
     height: messageBoxHeight
     color: isSenderMe ? Theme.messageColor : Theme.interlocutorsMessageColor
 
-    radius: radius_
+    radius: angleRadius
 
     Canvas
     {
@@ -92,7 +92,7 @@ Rectangle
 
         leftPadding: messageTextLeftPadding
         color: Theme.messageTextColor
-        wrapMode: Text.WordWrap
+        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
         width: textMetrics.width >= maxWidth ? maxWidth : textMetrics.width + 50
         font.pixelSize: 15
     }
