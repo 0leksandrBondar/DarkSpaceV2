@@ -26,3 +26,6 @@ TextMessage::TextMessage(const QString& sender, const QDateTime& timestamp)
     : Message(sender, timestamp, MessageType::TextMessage)
 {
 }
+QString TextMessage::data() const { return _data; }
+
+void TextMessage::setData(const QByteArray& data) { _data = data; }

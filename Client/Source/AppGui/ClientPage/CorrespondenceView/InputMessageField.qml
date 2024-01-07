@@ -19,7 +19,7 @@ Rectangle {
         var message = textEditor.text;
         if (message !== "" && /[a-zA-Z]/.test(message)) {
             sendButtonClicked(message);
-            client.sendMessage(Message.MessageType.TextMessage, "", textEditor.text)
+            client.sendMessage(Message.MessageType.TextMessage, client.getUserName(), textEditor.text)
             textEditor.clear();
         }
     }

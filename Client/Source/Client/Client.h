@@ -34,7 +34,7 @@ public:
     Client();
 
 public slots:
-    void sendMessage(Message::MessageType type, const QString& sender, const QString& data);
+    void sendMessage(Message::MessageType type, const QString& sender, const QByteArray& data);
 
     bool handleUserName(const QString& userName);
     [[nodiscard]] QString getUserName() const;
