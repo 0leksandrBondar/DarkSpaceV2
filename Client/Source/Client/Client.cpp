@@ -21,3 +21,21 @@
 // SOFTWARE.
 
 #include "Client.h"
+#include "MessageFactory.h"
+#include "TextMessage.h"
+
+Client::Client() {}
+
+bool Client::handleUserName(const QString& userName) { return _userData.handleUserName(userName); }
+
+QString Client::getUserName() const { return _userData.getUserName(); }
+
+void Client::sendMessage(Message::MessageType type, const QString& sender, const QByteArray& data)
+{
+    Message* message = MessageFactory::createMessage(type, sender, QDateTime::currentDateTime());
+
+    if (auto* textMessage = dynamic_cast<TextMessage*>(message))
+    {
+        textMessage->setData(data);
+    }
+}

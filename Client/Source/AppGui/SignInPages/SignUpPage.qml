@@ -12,6 +12,7 @@ Rectangle
     height: appWindow.height
 
     signal backClicked()
+
     signal signUpClicked()
 
     Image
@@ -28,7 +29,7 @@ Rectangle
         text: qsTr("SignUp")
         font.bold: true
         font.pointSize: 54
-        anchors.topMargin : 30
+        anchors.topMargin: 30
         color: Theme.labelColor
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
@@ -86,11 +87,10 @@ Rectangle
         anchors.bottomMargin: parent.height / 4
         onClicked:
         {
-            if (_userData.handleUserName(userNameField.text))
+            if (client.handleUserName(userNameField.text))
             {
                 signUpClicked()
-            }
-            else
+            } else
             {
                 console.log("username field cannot be empty")
             }

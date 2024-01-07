@@ -12,6 +12,7 @@ Rectangle
     height: appWindow.height
 
     signal backClicked()
+
     signal logInClicked()
 
     Image
@@ -27,7 +28,7 @@ Rectangle
         id: logInLabel
         text: qsTr("LogIn")
         anchors.top: parent.top
-        anchors.topMargin : 30
+        anchors.topMargin: 30
         anchors.horizontalCenter: parent.horizontalCenter
         color: Theme.labelColor
         font.pointSize: 54
@@ -77,11 +78,10 @@ Rectangle
         anchors.bottomMargin: parent.height / 4
         onClicked:
         {
-            if (_userData.handleUserName(userNameField.text))
+            if (client.handleUserName(userNameField.text))
             {
                 logInClicked()
-            }
-            else
+            } else
             {
                 console.log("username field cannot be empty")
             }

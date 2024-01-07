@@ -49,12 +49,17 @@ Rectangle
 
         ScrollBar.vertical: CustomScrollBar
         {
-
         }
     }
 
     function addMessage(text)
     {
-        listModel.append({"owner": _userData.getUserName(), "message": text.toString(), "currentTimeValue": Qt.formatDateTime(new Date(),  "hh:mm"), "isSenderMe": true})
+        listModel.append(
+            {
+            "owner": client.getUserName(),
+            "message": text.toString(),
+            "currentTimeValue": Qt.formatDateTime(new Date(), "hh:mm"),
+            "isSenderMe": true
+        })
     }
 }

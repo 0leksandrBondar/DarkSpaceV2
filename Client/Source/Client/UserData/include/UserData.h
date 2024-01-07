@@ -4,14 +4,10 @@
 #include <QObject>
 #include <QString>
 
-class UserData : public QObject
+class UserData
 {
-    Q_OBJECT
-
 public:
-    explicit UserData(QObject* parent = nullptr);
-
-public slots:
+    UserData() = default;
     bool handleUserName(const QString& userName);
     [[nodiscard]] QString getUserName() const;
 

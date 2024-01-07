@@ -20,27 +20,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "Client.h"
+#include "TextMessage.h"
 
-#include <QGuiApplication>
-#include <QQmlApplicationEngine>
-#include <QQmlContext>
-
-int main(int argc, char* argv[])
+TextMessage::TextMessage(const QString& sender, const QDateTime& timestamp)
+    : Message(sender, timestamp, MessageType::TextMessage)
 {
-    QGuiApplication app(argc, argv);
-    QQmlApplicationEngine engine;
-    const QUrl url(QStringLiteral("qrc:/main.qml"));
-
-    Client client;
-    engine.rootContext()->setContextProperty(QStringLiteral("client"), &client);
-
-    qmlRegisterType<Message>("Message", 1, 0, "Message");
-
-    qmlRegisterSingletonType(QStringLiteral(
-                                 "qrc:/SharedComponents/SharedProperties/SharedProperties.qml"),
-                             "Theme", 1, 0, "Theme");
-
-    engine.load(url);
-    return app.exec();
 }
+QString TextMessage::data() const { return _data; }
+
+void TextMessage::setData(const QByteArray& data) { _data = data; }

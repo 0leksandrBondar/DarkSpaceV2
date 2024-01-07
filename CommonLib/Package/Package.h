@@ -20,27 +20,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "Client.h"
+#pragma once
 
-#include <QGuiApplication>
-#include <QQmlApplicationEngine>
-#include <QQmlContext>
+#include "Message.h"
 
-int main(int argc, char* argv[])
+struct Header
 {
-    QGuiApplication app(argc, argv);
-    QQmlApplicationEngine engine;
-    const QUrl url(QStringLiteral("qrc:/main.qml"));
+    QString sender;
+    Message::MessageType type;
+    QDateTime timestamp;
+    unsigned long long size;
+};
 
-    Client client;
-    engine.rootContext()->setContextProperty(QStringLiteral("client"), &client);
+struct Body
+{
+    QByteArray data;
+};
 
-    qmlRegisterType<Message>("Message", 1, 0, "Message");
-
-    qmlRegisterSingletonType(QStringLiteral(
-                                 "qrc:/SharedComponents/SharedProperties/SharedProperties.qml"),
-                             "Theme", 1, 0, "Theme");
-
-    engine.load(url);
-    return app.exec();
-}
+struct Package
+{
+    Header header;
+    Body body;
+};

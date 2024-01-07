@@ -3,6 +3,7 @@ import QtQuick.Controls 2.15
 import QtQuick.Controls.Basic
 
 import Theme 1.0
+import Message 1.0
 
 import "../../SharedComponents/Buttons"
 import "../../SharedComponents/TextEditors"
@@ -12,7 +13,7 @@ Rectangle
     signal sendButtonClicked(string text)
 
     id: inputMessageField
-    color:  Theme.inputMessageFieldColor
+    color: Theme.inputMessageFieldColor
     radius: 10
 
     function sendMessage()
@@ -21,16 +22,17 @@ Rectangle
         if (message !== "" && /[a-zA-Z]/.test(message))
         {
             sendButtonClicked(message);
+            client.sendMessage(Message.MessageType.TextMessage, client.getUserName(), textEditor.text)
             textEditor.clear();
         }
     }
 
     CustomTextEditor
     {
-        id:textEditor
+        id: textEditor
         anchors.right: fileButton.left
 
-        Keys.onPressed: function(event)
+        Keys.onPressed: function (event)
         {
             if (event.key === Qt.Key_Return && event.modifiers & Qt.ControlModifier)
             {
