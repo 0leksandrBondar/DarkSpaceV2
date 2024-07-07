@@ -24,9 +24,6 @@
 
 #include <QObject>
 
-#include "Message.h"
-#include "UserData.h"
-
 class Client : public QObject
 {
     Q_OBJECT
@@ -34,11 +31,9 @@ public:
     Client();
 
 public slots:
-    void sendMessage(Message::MessageType type, const QString& sender, const QByteArray& data);
-
-    bool handleUserName(const QString& userName);
+    bool setUserName(const QString& userName);
     [[nodiscard]] QString getUserName() const;
 
 private:
-    UserData _userData;
+    QString _userName{};
 };

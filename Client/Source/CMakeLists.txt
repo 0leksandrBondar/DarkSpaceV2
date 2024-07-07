@@ -8,7 +8,7 @@ set(CMAKE_AUTOUIC ON)
 
 set(SOURCES
         Main.cpp
-        AppGui/qml.qrc
+        ${APP_GUI_RESOURCES_PATH}
 )
 
 add_custom_target(Resource)

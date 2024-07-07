@@ -30,6 +30,7 @@ Rectangle
         width: parent.width
         height: 50
         anchors.bottom: parent.bottom
+
         onSendButtonClicked: function(text)
         {
             correspondensScene.addMessage(text)

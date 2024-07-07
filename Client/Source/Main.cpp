@@ -35,8 +35,6 @@ int main(int argc, char* argv[])
     Client client;
     engine.rootContext()->setContextProperty(QStringLiteral("client"), &client);
 
-    qmlRegisterType<Message>("Message", 1, 0, "Message");
-
     qmlRegisterSingletonType(QStringLiteral(
                                  "qrc:/SharedComponents/SharedProperties/SharedProperties.qml"),
                              "Theme", 1, 0, "Theme");

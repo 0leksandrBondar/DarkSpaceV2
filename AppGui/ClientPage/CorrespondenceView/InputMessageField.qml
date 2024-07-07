@@ -3,7 +3,6 @@ import QtQuick.Controls 2.15
 import QtQuick.Controls.Basic
 
 import Theme 1.0
-import Message 1.0
 
 import "../../SharedComponents/Buttons"
 import "../../SharedComponents/TextEditors"
@@ -22,7 +21,6 @@ Rectangle
         if (message !== "")
         {
             sendButtonClicked(message);
-            client.sendMessage(Message.MessageType.TextMessage, client.getUserName(), textEditor.text)
             textEditor.clear();
         }
     }

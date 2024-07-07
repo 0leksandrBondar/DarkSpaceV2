@@ -13,7 +13,7 @@ Rectangle
 
     signal backClicked()
 
-    signal signUpClicked()
+    signal logInClicked()
 
     Image
     {
@@ -25,14 +25,14 @@ Rectangle
 
     Text
     {
-        id: signUnLabel
-        text: qsTr("SignUp")
-        font.bold: true
-        font.pointSize: 54
-        anchors.topMargin: 30
-        color: Theme.labelColor
+        id: logInLabel
+        text: qsTr("LogIn")
         anchors.top: parent.top
+        anchors.topMargin: 30
         anchors.horizontalCenter: parent.horizontalCenter
+        color: Theme.labelColor
+        font.pointSize: 54
+        font.bold: true
     }
 
     CustomTextField
@@ -40,27 +40,18 @@ Rectangle
         id: userNameField
         textPlaceholder: qsTr("User name")
         anchors.bottom: parent.verticalCenter
+        anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottomMargin: parent.height / 5
-        anchors.horizontalCenter: parent.horizontalCenter
-    }
-
-    CustomTextField
-    {
-        id: emailField
-        textPlaceholder: qsTr("Email")
-        anchors.top: userNameField.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.topMargin: 30
     }
 
     CustomTextField
     {
         id: passwordField
-        echoMode: TextInput.Password
         textPlaceholder: qsTr("Password")
-        anchors.topMargin: 30
-        anchors.top: emailField.bottom
+        echoMode: TextInput.Password
+        anchors.top: userNameField.bottom
         anchors.horizontalCenter: parent.horizontalCenter
+        anchors.topMargin: 30
     }
 
     CustomButton
@@ -80,16 +71,16 @@ Rectangle
     CustomButton
     {
         id: signUpButton
-        buttonText: qsTr("SignUp")
+        buttonText: qsTr("LogIn")
         anchors.bottom: parent.bottom
         anchors.left: parent.horizontalCenter
         anchors.leftMargin: parent.width / 10
         anchors.bottomMargin: parent.height / 4
         onClicked:
         {
-            if (client.handleUserName(userNameField.text))
+            if (client.setUserName(userNameField.text))
             {
-                signUpClicked()
+                logInClicked()
             } else
             {
                 console.log("username field cannot be empty")

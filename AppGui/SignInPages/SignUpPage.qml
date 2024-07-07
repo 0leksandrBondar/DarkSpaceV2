@@ -12,8 +12,7 @@ Rectangle
     height: appWindow.height
 
     signal backClicked()
-
-    signal logInClicked()
+    signal signUpClicked()
 
     Image
     {
@@ -25,14 +24,14 @@ Rectangle
 
     Text
     {
-        id: logInLabel
-        text: qsTr("LogIn")
-        anchors.top: parent.top
-        anchors.topMargin: 30
-        anchors.horizontalCenter: parent.horizontalCenter
-        color: Theme.labelColor
-        font.pointSize: 54
+        id: signUpLabel
+        text: qsTr("SignUp")
         font.bold: true
+        font.pointSize: 54
+        anchors.topMargin: 30
+        color: Theme.labelColor
+        anchors.top: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
     }
 
     CustomTextField
@@ -40,18 +39,27 @@ Rectangle
         id: userNameField
         textPlaceholder: qsTr("User name")
         anchors.bottom: parent.verticalCenter
-        anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottomMargin: parent.height / 5
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+
+    CustomTextField
+    {
+        id: emailField
+        textPlaceholder: qsTr("Email")
+        anchors.top: userNameField.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.topMargin: 30
     }
 
     CustomTextField
     {
         id: passwordField
-        textPlaceholder: qsTr("Password")
         echoMode: TextInput.Password
-        anchors.top: userNameField.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
+        textPlaceholder: qsTr("Password")
         anchors.topMargin: 30
+        anchors.top: emailField.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
     }
 
     CustomButton
@@ -71,16 +79,16 @@ Rectangle
     CustomButton
     {
         id: signUpButton
-        buttonText: qsTr("LogIn")
+        buttonText: qsTr("SignUp")
         anchors.bottom: parent.bottom
         anchors.left: parent.horizontalCenter
         anchors.leftMargin: parent.width / 10
         anchors.bottomMargin: parent.height / 4
         onClicked:
         {
-            if (client.handleUserName(userNameField.text))
+            if (client.setUserName(userNameField.text))
             {
-                logInClicked()
+                signUpClicked()
             } else
             {
                 console.log("username field cannot be empty")
