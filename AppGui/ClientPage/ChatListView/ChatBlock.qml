@@ -7,7 +7,6 @@ Rectangle
     id: chatBlock
     property string title
 
-    width: parent.width
     height: 60
     color: Material.background
 

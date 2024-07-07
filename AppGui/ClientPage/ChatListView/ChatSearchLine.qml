@@ -7,7 +7,10 @@ import "../../SharedComponents/TextFields"
 
 Rectangle
 {
-    color:  Material.background
+    color: Material.background
+
+    signal searchLineChanged(string value)
+
     CustomTextField
     {
         width: parent.width / 1.1
@@ -15,5 +18,6 @@ Rectangle
         anchors.centerIn: parent
         textPlaceholder: qsTr("Search")
         font.pointSize: 10
+        onTextChanged: searchLineChanged(text)
     }
 }

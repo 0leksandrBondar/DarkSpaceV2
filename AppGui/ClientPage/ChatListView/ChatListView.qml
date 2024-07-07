@@ -15,9 +15,26 @@ Rectangle
 
     signal clickOnChatBlock(string chatName);
 
+    property var filter : ""
+
     function addNewChat(chatName)
     {
         chatBlockList.append({"text": chatName});
+    }
+
+    function filterChatList()
+    {
+        filteredBlockList.clear()
+
+        for (var i = 0; i < chatBlockList.count; ++i)
+        {
+            var chatName = chatBlockList.get(i).text;
+            if (chatName.toLowerCase().includes(filter.toLowerCase()))
+            {
+                filteredBlockList.append({"text": chatName});
+            }
+        }
+
     }
 
     ChatSearchLine
@@ -25,6 +42,12 @@ Rectangle
         id: chatSearchLine
         width: parent.width
         height: 60
+
+        onSearchLineChanged: function(value)
+        {
+            filter = value
+            filterChatList()
+        }
     }
 
     Rectangle
@@ -41,18 +64,24 @@ Rectangle
             id: chatBlockList
         }
 
+        ListModel
+        {
+            id: filteredBlockList
+        }
+
         ListView
         {
             id: listView
             clip: true
             anchors.fill: parent
-            model: chatBlockList
+            model: filter.length === 0 ? chatBlockList : filteredBlockList
             orientation: Qt.Vertical
             boundsBehavior: Flickable.StopAtBounds
             verticalLayoutDirection: ListView.TopToBottom
             delegate: ChatBlock
             {
                 title: model.text
+                width: listView.width
             }
             ScrollBar.vertical: CustomScrollBar
             {
@@ -85,8 +114,7 @@ Rectangle
                 {
                     var maxWidth = appWindow.width - (appWindow.width/ 2)
                     var minWidth = appWindow.width * 0.2
-                    console.log("minWidth = " + minWidth)
-                    chatListViewBlock.width = chatListViewBlock.width + mouseX
+                    chatListViewBlock.width += mouseX
 
                     if(chatListViewBlock.width > maxWidth)
                         chatListViewBlock.width = maxWidth
