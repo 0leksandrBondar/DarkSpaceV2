@@ -7,8 +7,7 @@ import Theme 1.0
 
 TextField
 {
-    id: emailField
-
+    id: textField
     property string textPlaceholder
 
     width: 500
@@ -16,11 +15,12 @@ TextField
     font.pointSize: 20
     background: Rectangle
     {
-        color:  Material.background
+        color: Material.background
         radius: 20
         border.color: Theme.labelColor
         border.width: 1
     }
+
     PlaceholderText
     {
         opacity: 0.8
@@ -31,10 +31,14 @@ TextField
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
         anchors.leftMargin: 15
+        visible: !textField.activeFocus || (textField.activeFocus && textField.text.length === 0)
     }
+
     onActiveFocusChanged:
     {
-        if (activeFocus)
-            placeholderText.text = "";
+        if (textField.activeFocus)
+            placeholderText.visible = false;
+        else
+            placeholderText.visible = textField.text.length === 0;
     }
 }
