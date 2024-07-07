@@ -84,12 +84,14 @@ Rectangle
                 if(drag.active)
                 {
                     var maxWidth = appWindow.width - (appWindow.width/ 2)
+                    var minWidth = appWindow.width * 0.2
+                    console.log("minWidth = " + minWidth)
                     chatListViewBlock.width = chatListViewBlock.width + mouseX
 
                     if(chatListViewBlock.width > maxWidth)
                         chatListViewBlock.width = maxWidth
-                    if(chatListViewBlock.width < 50)
-                        chatListViewBlock.width = 50
+                    if(chatListViewBlock.width < minWidth)
+                        chatListViewBlock.width = minWidth
                 }
             }
         }

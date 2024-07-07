@@ -10,6 +10,8 @@ ApplicationWindow
     visible: true
     width: 900
     height: 900
+    minimumWidth: 850
+    minimumHeight: 700
     title: qsTr("DarkSpace")
 
     Material.theme: Material.Dark
