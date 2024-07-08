@@ -34,7 +34,6 @@ Rectangle
                 filteredBlockList.append({"text": chatName});
             }
         }
-
     }
 
     ChatSearchLine

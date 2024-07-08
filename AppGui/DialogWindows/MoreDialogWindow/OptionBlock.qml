@@ -51,6 +51,7 @@ Rectangle
             {
                 var dialog = component.createObject(parent);
                 dialog.open();
+                moreOptionWindow.close()
             }
         }
     }

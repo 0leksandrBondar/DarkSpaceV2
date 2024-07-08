@@ -17,8 +17,8 @@ Rectangle
     MoreDialogWindow
     {
         id: moreDialogWindow
-        width: chatListView.width
-        height: parent.height
+        width: appWindow.width / 4
+        height: appWindow.height
     }
 
     ChatListView

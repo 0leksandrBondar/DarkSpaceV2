@@ -8,31 +8,39 @@ import "../../SharedComponents/TextFields"
 
 Dialog
 {
-    modal: true
-    width: moreOptionWindow.width
-    height: moreOptionWindow.height
+    parent: Overlay.overlay
     anchors.centerIn: parent
+    width: appWindow.width / 2.5
+    height: appWindow.height / 2.5
+    opacity: 1
+    modal: true
+
+    background: Rectangle
+    {
+        radius: 10
+        color: Theme.buttonUnhoveredBackgroundColor
+    }
 
     Text
     {
         id: createNewChatLabel
         text: qsTr("Create new chat")
-        anchors.top: parent.top
-        anchors.topMargin : parent.height / 10
+        anchors.bottom: searchLine.top
+        anchors.bottomMargin : parent.height * 0.25
         anchors.horizontalCenter: parent.horizontalCenter
         color: Theme.labelColor
-        font.pointSize: 24
+        font.pointSize: 20
         font.bold: true
     }
 
     CustomTextField
     {
         id: searchLine
-        width: parent.width
+        width: parent.width / 2
         height: 50
-        anchors.topMargin : parent.height / 10
-        anchors.top: createNewChatLabel.bottom
+        anchors.centerIn: parent
         textPlaceholder: qsTr("Enter username")
+        placeholderFontSize: 10
     }
 
     Button
@@ -40,8 +48,11 @@ Dialog
         id: createButton
         width: searchLine.width
         height: 50
+
         anchors.top: searchLine.bottom
-        anchors.topMargin: 50
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.topMargin : parent.height * 0.25
+
         onClicked:
         {
             chatListView.addNewChat(searchLine.text)
@@ -49,7 +60,7 @@ Dialog
         }
         contentItem : Text
         {
-            text: qsTr("Create new chat")
+            text: qsTr("Create")
             color: createButton.hovered ?  Theme.buttonHoveredTextColor : Theme.buttonUnhoveredTextColor
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
@@ -63,4 +74,3 @@ Dialog
         }
     }
 }
-

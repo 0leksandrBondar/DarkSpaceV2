@@ -9,6 +9,7 @@ TextField
 {
     id: textField
     property string textPlaceholder
+    property int placeholderFontSize: 0
 
     width: 500
     height: 50
@@ -26,7 +27,7 @@ TextField
         opacity: 0.8
         id: placeholderText
         color: Theme.labelColor
-        font.pointSize: parent.font.pointSize
+        font.pointSize: placeholderFontSize === 0 ? parent.font.pointSize : placeholderFontSize
         text: textPlaceholder
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left

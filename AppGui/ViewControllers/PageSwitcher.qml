@@ -9,7 +9,7 @@ StackView
 {
     id: pageSwitcher
 
-    initialItem: welcomePage
+    initialItem: clientPage
     anchors.fill : parent
     Component
     {
