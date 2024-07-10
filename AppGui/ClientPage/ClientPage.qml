@@ -14,6 +14,8 @@ Rectangle
     width: appWindow.width
     height: appWindow.height
 
+    property bool isChatSelected: false
+
     MoreDialogWindow
     {
         id: moreDialogWindow
@@ -28,6 +30,7 @@ Rectangle
         onClickOnChatBlock: function(chatName)
          {
              correspondenceView.updateRecipientName(chatName)
+             isChatSelected = true
          }
     }
 
@@ -40,6 +43,7 @@ Rectangle
     CorrespondenceView
     {
         id: correspondenceView
+        visible: isChatSelected ? true : false
         width: parent.width - (chatListView.width + settingsBar.width)
         height: parent.height
         anchors.left: chatListView.right
