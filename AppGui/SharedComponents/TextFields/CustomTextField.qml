@@ -5,41 +5,39 @@ import QtQuick.Controls.Material 2.15
 
 import Theme 1.0
 
-TextField
-{
+TextField {
     id: textField
-    property string textPlaceholder
+    property string textPlaceholder: "Enter your text here"
     property int placeholderFontSize: 0
+    property color placeholderColor: "gray"
 
     width: 500
     height: 50
     font.pointSize: 20
-    background: Rectangle
-    {
+    background: Rectangle {
         color: Material.background
         radius: 20
         border.color: Theme.labelColor
         border.width: 1
     }
 
-    PlaceholderText
-    {
+    Label {
+        id: placeholderLabel
         opacity: 0.8
-        id: placeholderText
-        color: Theme.labelColor
-        font.pointSize: placeholderFontSize === 0 ? parent.font.pointSize : placeholderFontSize
-        text: textPlaceholder
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.left: parent.left
+        color: textField.placeholderColor
+        font.pointSize: textField.placeholderFontSize === 0 ? textField.font.pointSize : textField.placeholderFontSize
+        text: textField.textPlaceholder
+        anchors.verticalCenter: textField.verticalCenter
+        anchors.left: textField.left
         anchors.leftMargin: 15
-        visible: !textField.activeFocus || (textField.activeFocus && textField.text.length === 0)
+        visible: textField.text.length === 0
     }
 
-    onActiveFocusChanged:
-    {
-        if (textField.activeFocus)
-            placeholderText.visible = false;
-        else
-            placeholderText.visible = textField.text.length === 0;
+    onTextChanged: {
+        placeholderLabel.visible = textField.text.length === 0
+    }
+
+    onActiveFocusChanged: {
+        placeholderLabel.visible = !textField.activeFocus && textField.text.length === 0
     }
 }

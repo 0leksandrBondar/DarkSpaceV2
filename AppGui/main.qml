@@ -8,7 +8,7 @@ ApplicationWindow
 {
     id: appWindow
     visible: true
-    width: 900
+    width: 1300
     height: 900
     minimumWidth: 850
     minimumHeight: 700

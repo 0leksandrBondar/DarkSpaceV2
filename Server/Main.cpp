@@ -20,4 +20,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-int main() {}
+#include "Server.h"
+
+int main()
+{
+    const SocketAddress serverAddress = { "127.0.0.1", 8080 };
+    Server server(serverAddress);
+}
